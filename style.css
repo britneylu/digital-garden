@@ -11,8 +11,7 @@ h1,
 h2,
 h3 {
     font-family: 'Poppins', Arial, sans-serif;
-    font-weight: 600;
-    /* 标题加粗 */
+    font-weight: 600; /* 标题加粗 */
 }
 
 /* 页眉样式 */
@@ -21,6 +20,18 @@ header {
     padding: 20px;
     text-align: center;
     color: white;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #f0f0f0; /* 白色或浅色，和背景对比 */
+    margin: 0;
 }
 
 /* 导航栏样式 */
@@ -59,16 +70,11 @@ nav a:hover {
 
 /* 返回按钮样式 */
 .back-btn {
-    width: 150px;
-    /* 固定宽度 */
-    height: 150px;
-    /* 固定高度 */
-    padding: 0;
-    /* 去掉多余内边距 */
-    line-height: 40px;
-    /* 让文字垂直居中 */
-    text-align: center;
-    /* 文字水平居中 */
+    width: 150px; /* 固定宽度 */
+    height: 150px; /* 固定高度 */
+    padding: 0; /* 去掉多余内边距 */
+    line-height: 40px; /* 让文字垂直居中 */
+    text-align: center; /* 文字水平居中 */
     padding: 10px 15px;
     margin-bottom: 15px;
     cursor: pointer;
@@ -153,20 +159,15 @@ h2 {
 }
 
 /* 音乐样式 */
-/* 去掉链接默认样式 */
 .card a {
-    color: inherit;
-    /* 继承父元素颜色 */
-    text-decoration: none;
-    /* 去掉下划线 */
+    color: inherit; /* 继承父元素颜色 */
+    text-decoration: none; /* 去掉下划线 */
 }
 
 /* 可选：悬停效果，让用户知道这是可点击的 */
 .card a:hover {
-    text-decoration: underline;
-    /* 悬停时显示下划线 */
-    color: #5986d8;
-    /* 或你网站主题色 */
+    text-decoration: underline; /* 悬停时显示下划线 */
+    color: #5986d8; /* 或你网站主题色 */
 }
 
 /* 照片墙样式 */
@@ -186,8 +187,7 @@ h2 {
 }
 
 .photo-card summary {
-    list-style: none;
-    /* 去掉箭头默认样式 */
+    list-style: none; /* 去掉箭头默认样式 */
     cursor: pointer;
 }
 
@@ -253,8 +253,7 @@ footer {
     /* 影视模块三列 */
     #movie-types .type-card,
     #movie-content .card {
-        width: 30%;
-        /* 三张一排 */
+        width: 30%; /* 三张一排 */
     }
 
     /* 文案卡片、音乐卡片、照片墙：两列 */
@@ -270,8 +269,7 @@ footer {
     .quote-card,
     .card,
     .photo-card {
-        width: 40%;
-        /* 两张一排 */
+        width: 40%; /* 两张一排 */
     }
 
     .quote-card .chinese {
@@ -289,13 +287,15 @@ footer {
     /* 返回按钮 */
     .back-btn {
         width: 90%;
-        height: 60px;
+        height: 40px;
         font-size: 14px;
         margin-bottom: 10px;
         padding: 0;
         display: flex;
         justify-content: center; /* 水平居中 */
         align-items: center; /* 垂直居中 */
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
     /* 页脚 */
