@@ -1,4 +1,4 @@
-# 🌱 My Digital Garden （数字花园）  
+# 🌱 My Digital Garden（数字花园）  
 👉 在线逛逛：[https://britneylu.github.io/digital-garden/](https://britneylu.github.io/digital-garden/)
 
 欢迎来到我的 **数字小花园** 👩🏻‍🌾  
