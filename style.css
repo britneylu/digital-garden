@@ -24,12 +24,12 @@ header {
 }
 
 header h1 {
-    font-size: 28px;
+    font-size: 30px;
     margin-bottom: 10px;
 }
 
 header p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     color: #f0f0f0;
     /* 白色或浅色，和背景对比 */
@@ -44,9 +44,11 @@ nav {
 /* 导航链接样式 */
 nav a {
     color: white;
+    font-size: 20px;
     text-decoration: none;
     padding: 12px 20px;
     display: inline-block;
+    transition: background-color 0.3s;
 }
 
 nav a:hover {
@@ -145,7 +147,7 @@ h2 {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-    width: 300px;
+    width: 290px;
     transition: transform 0.2s;
 }
 
@@ -167,18 +169,14 @@ h2 {
 
 /* 音乐样式 */
 .card a {
-    color: inherit;
-    /* 继承父元素颜色 */
-    text-decoration: none;
-    /* 去掉下划线 */
+    color: inherit; /* 继承父元素颜色 */
+    text-decoration: none; /* 去掉下划线 */
 }
 
 /* 可选：悬停效果，让用户知道这是可点击的 */
 .card a:hover {
-    text-decoration: underline;
-    /* 悬停时显示下划线 */
-    color: #5986d8;
-    /* 或你网站主题色 */
+    text-decoration: underline; /* 悬停时显示下划线 */
+    color: #5986d8; /* 或你网站主题色 */
 }
 
 .quote-card .chinese {
@@ -221,6 +219,26 @@ h2 {
     font-size: 16px;
 }
 
+/* 音乐链接按钮 — 仅边框颜色 */
+a.link-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 2px solid #5986d8; /* 边框颜色 */
+    border-radius: 6px;         /* 圆角 */
+    color: #5986d8;             /* 文字颜色 */
+    text-decoration: none;      /* 去掉下划线 */
+    font-size: 18px;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+/* 悬停效果 */
+a.link-btn:hover {
+    border-color: #7395d4;      /* 鼠标悬停边框变色 */
+    color: #7395d4;             /* 文字变色 */
+    transform: scale(1.05);        /* 放大一点点，增加交互感 */
+}
+
+
 /* 照片墙样式 */
 .photo-container {
     display: flex;
@@ -230,7 +248,8 @@ h2 {
 }
 
 .photo-card {
-    width: 200px;
+    width: 290px;
+    height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     background-color: #fff;
@@ -238,8 +257,7 @@ h2 {
 }
 
 .photo-card summary {
-    list-style: none;
-    /* 去掉箭头默认样式 */
+    list-style: none; /* 去掉箭头默认样式 */
     cursor: pointer;
 }
 
@@ -252,13 +270,14 @@ h2 {
 .photo-card summary p {
     text-align: center;
     margin: 1px 0;
+    font-size: 18px;
     font-weight: bold;
     padding: 6px 10px; 
 }
 
 .photo-detail {
     padding: 2px 10px; 
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
     color: #333;
 }
