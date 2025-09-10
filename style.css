@@ -258,6 +258,10 @@ footer {
     /* 影视卡片：两列 */
     #movie-content .card {
         width: 38%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 
     /* 文案卡片、音乐卡片、照片墙：两列 */
@@ -290,7 +294,7 @@ footer {
 
     /* 返回按钮 */
     .back-btn {
-        width: 90%;
+        width: 95%;
         height: 40px;
         font-size: 14px;
         margin-bottom: 10px;
