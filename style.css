@@ -250,10 +250,14 @@ footer {
         text-align: center;
     }
 
-    /* 影视模块三列 */
-    #movie-types .type-card,
+    /* 影视类型选择：三列 */
+    #movie-types .type-card {
+        width: 30%;
+    }
+
+    /* 影视卡片：两列 */
     #movie-content .card {
-        width: 30%; /* 三张一排 */
+        width: 38%;
     }
 
     /* 文案卡片、音乐卡片、照片墙：两列 */
