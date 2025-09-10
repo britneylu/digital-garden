@@ -220,23 +220,23 @@ h2 {
 }
 
 /* 音乐链接按钮 — 仅边框颜色 */
-a.link-btn {
+/* a.music-btn {
     display: inline-block;
     padding: 6px 12px;
-    border: 2px solid #5986d8; /* 边框颜色 */
-    border-radius: 6px;         /* 圆角 */
-    color: #5986d8;             /* 文字颜色 */
-    text-decoration: none;      /* 去掉下划线 */
+    border: 2px solid #5986d8;
+    border-radius: 6px;
+    color: #5986d8;
+    text-decoration: none;
     font-size: 18px;
     transition: border-color 0.3s, color 0.3s;
-}
+} */
 
 /* 悬停效果 */
-a.link-btn:hover {
-    border-color: #7395d4;      /* 鼠标悬停边框变色 */
-    color: #7395d4;             /* 文字变色 */
-    transform: scale(1.05);        /* 放大一点点，增加交互感 */
-}
+/* a.music-btn:hover {
+    border-color: #7395d4;
+    color: #7395d4;
+    transform: scale(1.05);
+} */
 
 
 /* 照片墙样式 */
@@ -274,6 +274,11 @@ a.link-btn:hover {
     font-weight: bold;
     padding: 6px 10px; 
 }
+
+/* .photo-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s;
+} */
 
 .photo-detail {
     padding: 2px 10px; 
