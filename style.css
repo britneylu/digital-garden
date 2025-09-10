@@ -253,19 +253,25 @@ footer {
     /* 影视模块三列 */
     #movie-types .type-card,
     #movie-content .card {
-        width: 30%; /* 三张一排 */
+        width: 30%;
+        /* 三张一排 */
     }
 
     /* 文案卡片、音乐卡片、照片墙：两列 */
-    .quote-container, .card-container:not(#movie-content):not(#movie-types), .photo-container {
+    .quote-container,
+    .card-container:not(#movie-content):not(#movie-types),
+    .photo-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
     }
 
-    .quote-card, .card, .photo-card {
-        width: 40%; /* 两张一排 */
+    .quote-card,
+    .card,
+    .photo-card {
+        width: 40%;
+        /* 两张一排 */
     }
 
     .quote-card .chinese {
@@ -283,9 +289,10 @@ footer {
     /* 返回按钮 */
     .back-btn {
         width: 90%;
-        height: 60px;
+        height: 100px;
         font-size: 14px;
         margin-bottom: 10px;
+        padding: 0;
     }
 
     /* 页脚 */
