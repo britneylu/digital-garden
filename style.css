@@ -250,18 +250,6 @@ footer {
         text-align: center;
     }
 
-    /* 影视模块卡片保持三列 */
-    /* #movie-content, #movie-types {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    #movie-content .card, #movie-types .type-card {
-        width: 30%;
-    } */
-
     /* 影视模块三列 */
     #movie-types .type-card,
     #movie-content .card {
@@ -295,7 +283,7 @@ footer {
     /* 返回按钮 */
     .back-btn {
         width: 90%;
-        height: 40px;
+        height: 60px;
         font-size: 14px;
         margin-bottom: 10px;
     }
