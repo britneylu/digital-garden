@@ -1,0 +1,217 @@
+/* ---------------- 通用样式 ---------------- */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e8e8e8;
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600; /* 标题加粗 */
+}
+
+/* 页眉样式 */
+header {
+    background-color: #5986d8;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* 导航栏样式 */
+nav {
+    background-color: #3e3e3e;
+}
+
+/* 导航链接样式 */
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+/* ---------------- 影视类型卡样式 ---------------- */
+.type-card {
+    background-color: white;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin: 10px;
+}
+
+.type-card:hover {
+    transform: scale(1.05);
+}
+
+/* 返回按钮样式 */
+.back-btn {
+    width: 150px;
+    /* 固定宽度 */
+    height: 150px;
+    /* 固定高度 */
+    padding: 0;
+    /* 去掉多余内边距 */
+    line-height: 40px;
+    /* 让文字垂直居中 */
+    text-align: center;
+    /* 文字水平居中 */
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    background-color: #5986d8;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #7395d4;
+}
+
+/* ---------------- 页面内容区 ---------------- */
+section {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    border-bottom: 2px solid #5986d8;
+    padding-bottom: 5px;
+}
+
+/* ---------------- 卡片容器 ---------------- */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+/* ---------------- 卡片样式 ---------------- */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 200px;
+}
+
+/* 卡片内图片样式 */
+.card img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+/* 文案样式 */
+.quote-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.quote-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    width: 300px;
+    transition: transform 0.2s;
+}
+
+.quote-card:hover {
+    transform: translateY(-5px);
+}
+
+.quote-card .chinese {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.quote-card .english {
+    font-style: italic;
+    color: #555;
+    font-size: 14px;
+}
+
+/* 音乐样式 */
+/* 去掉链接默认样式 */
+.card a {
+    color: inherit;
+    /* 继承父元素颜色 */
+    text-decoration: none;
+    /* 去掉下划线 */
+}
+
+/* 可选：悬停效果，让用户知道这是可点击的 */
+.card a:hover {
+    text-decoration: underline;
+    /* 悬停时显示下划线 */
+    color: #5986d8;
+    /* 或你网站主题色 */
+}
+
+/* 照片墙样式 */
+.photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.photo-card {
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.photo-card summary {
+    list-style: none;
+    /* 去掉箭头默认样式 */
+    cursor: pointer;
+}
+
+.photo-card summary img {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+.photo-card summary p {
+    text-align: center;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.photo-detail {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+}
+
+/* ---------------- 页脚样式 ---------------- */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}

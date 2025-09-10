@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>叽里咕卢</title>
+    <!-- 引入外部 CSS 文件 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- 网站头部 -->
+    <header>
+        <h1>小卢的叽里咕卢</h1>
+        <p>记录生活的点点滴滴</p>
+    </header>
+
+    <!-- 导航栏，点击可跳转到页面对应部分 -->
+    <nav>
+        <a href="#movies">影视记录</a>
+        <a href="#quotes">文案收藏</a>
+        <a href="#food">美食清单</a>
+        <a href="#music">音乐收藏</a>
+    </nav>
+
+    <!-- 影视模块 -->
+    <section id="movies">
+        <h2>影视记录</h2>
+
+        <!-- 类型选择卡（电影 / 电视剧 / 综艺） -->
+        <div id="movie-types" class="card-container">
+            <div class="type-card" onclick="showMovieCategory('tv')">
+                <h3>电视剧</h3>
+            </div>
+            <div class="type-card" onclick="showMovieCategory('movie')">
+                <h3>电影</h3>
+            </div>
+            <div class="type-card" onclick="showMovieCategory('show')">
+                <h3>综艺</h3>
+            </div>
+        </div>
+
+        <!-- 动态显示影视作品卡片 -->
+        <div id="movie-content" class="card-container" style="display:none;">
+            <!-- JS 会生成对应作品卡片 -->
+        </div>
+    </section>
+
+    <!-- 影视模块的 JS 动态内容 -->
+    <script>
+        // 每个类型的影视作品数据
+        const movieData = {
+            tv: [
+                { name: '爱你', rating: '★★★★★', comment: '我的人生剧！非常治愈的一部 推荐大家都去看', img: './images/ai_ni_img.png' },
+                { name: 'The Residence', rating: '★★★★☆', comment: '超搞笑的', img: './images/the_residence.jpeg' }
+            ],
+            movie: [
+                { name: '消失的她', rating: '★★★★☆', comment: '结局真的意想不到，吓鼠我了', img: './images/xiao_shi_de_ta.png' }, 
+                { name: '电影B', rating: '★★★☆☆', comment: '剧情一般', img: 'https://via.placeholder.com/200x300' }
+            ],
+            show: [
+                { name: '花儿与少年·丝路季', rating: '★★★★★', comment: '这就是群像的魅力！', img: './images/hua_shao_img.jpg' },
+                { name: '综艺B', rating: '★★★☆☆', comment: '一般', img: 'https://via.placeholder.com/200x300' }
+            ]
+        };
+
+        // 点击类型卡片时显示对应影视作品
+        function showMovieCategory(category) {
+            const typesDiv = document.getElementById('movie-types'); // 类型选择卡容器
+            const contentDiv = document.getElementById('movie-content'); // 作品卡片容器
+            typesDiv.style.display = 'none'; // 隐藏类型选择
+            contentDiv.style.display = 'flex'; // 显示作品容器
+            contentDiv.innerHTML = ''; // 清空之前内容
+
+            // 创建返回按钮
+            const backBtn = document.createElement('button');
+            backBtn.textContent = '← 返回类型选择';
+            backBtn.className = 'back-btn';
+            backBtn.onclick = () => {
+                contentDiv.style.display = 'none';
+                typesDiv.style.display = 'flex';
+            };
+            contentDiv.appendChild(backBtn);
+
+            // 动态生成作品卡片
+            movieData[category].forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <img src="${item.img}" alt="${item.name}">
+                    <h3>${item.name}</h3>
+                    <p>评分: ${item.rating}</p>
+                    <p>点评: ${item.comment}</p>
+                `;
+                contentDiv.appendChild(card);
+            });
+        }
+    </script>
+
+    <!-- 文案收藏模块 -->
+    <section id="quotes">
+        <h2>文案收藏</h2>
+        <div class="quote-container">
+            <div class="quote-card">
+                <p class="chinese">不要因为别人交卷了，就乱写答案。</p>
+                <p class="english">Move at your own pace, on your own path. Your lane, your race, your pace.</p>
+            </div>
+            <div class="quote-card">
+                <p class="chinese">如果你太留恋过去的自己，将永远无法成为你想成为的人。</p>
+                <p class="english">If you dwell too much on your past self, you'll never become who you want to be.</p>
+            </div>
+            <div class="quote-card">
+                <p class="chinese">无需比较，我独我。</p>
+                <p class="english">No need to compare; I am uniquely myself.</p>
+            </div>
+            <div class="quote-card">
+                <p class="chinese">车到山头必有路，船到桥头自然直。</p>
+                <p class="english">Where there‘s a will, there’s a way.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 美食模块 -->
+    <section id="food">
+        <h2>美食清单</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>麻辣烫</h3>
+                <p>类型: 主食</p>
+                <p>评分: ★★★★★</p>
+                <p>备注: 朋友们，答应我来费城一定要去厨尚麻辣好吗</p>
+            </div>
+            <div class="card">
+                <h3>火锅</h3>
+                <p>类型: 主食</p>
+                <p>评分: ★★★★☆</p>
+                <p>备注: 绝对不会出错的选择</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 音乐模块 -->
+    <section id="music">
+        <h2>音乐收藏（无限播放的那种）</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3><a href="https://www.youtube.com/watch?v=OPN92RL6tBY" target="_blank">沦陷 (Sink Into)</a></h3>
+                <p>歌手: Juggshots</p>
+                <p>类型: rnb</p>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.youtube.com/watch?v=O9T385SowTk" target="_blank">零距离的思念</a></h3>
+                <p>歌手: TINY7</p>
+                <p>类型: rnb</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 照片墙模块 -->
+    <section id="photo-wall">
+        <h2>照片墙</h2>
+        <div class="photo-container">
+            <details class="photo-card">
+                <summary>
+                    <img src="images/photo_1.jpg" alt="照片1">
+                    <p>Vanderbilt Beach</p>
+                </summary>
+                <div class="photo-detail">
+                    <p>这张照片是在夏天去纽约长岛的时候拍的，海风很舒服。</p>
+                    <p>拍摄日期: 2024-08-10</p>
+                </div>
+            </details>
+
+            <details class="photo-card">
+                <summary>
+                    <img src="images/photo2.jpg" alt="照片2">
+                    <p>秋天的森林</p>
+                </summary>
+                <div class="photo-detail">
+                    <p>金黄的落叶让森林像童话一样，美极了！</p>
+                    <p>拍摄日期: 2025-10-01</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        &copy; 2025 小卢的个人网站
+    </footer>
+
+</body>
+
+</html>
