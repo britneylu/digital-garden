@@ -215,3 +215,62 @@ footer {
     color: white;
     margin-top: 20px;
 }
+
+/* ================== 手机端适配 ================== */
+@media (max-width: 600px) {
+    /* 页眉文字缩小 */
+    header h1 {
+        font-size: 22px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    /* 导航栏竖排 */
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        border-bottom: 1px solid #444;
+    }
+
+    /* 卡片容器一列 */
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 卡片宽度全屏 */
+    .card,
+    .quote-card,
+    .photo-card {
+        width: 100%;
+        max-width: 90%; /* 给点留白 */
+    }
+
+    /* quote 中文和英文字号缩小 */
+    .quote-card .chinese {
+        font-size: 15px;
+    }
+
+    .quote-card .english {
+        font-size: 13px;
+    }
+
+    /* 返回按钮拉长而不是正方形 */
+    .back-btn {
+        width: 100%;
+        height: auto;
+        padding: 12px;
+        line-height: normal;
+        font-size: 14px;
+    }
+}
