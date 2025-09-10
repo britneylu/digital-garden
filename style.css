@@ -7,9 +7,12 @@ body {
     color: #333;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Poppins', Arial, sans-serif;
-    font-weight: 600; /* 标题加粗 */
+    font-weight: 600;
+    /* 标题加粗 */
 }
 
 /* 页眉样式 */
@@ -217,46 +220,66 @@ footer {
 }
 
 /* ================== 手机端适配 ================== */
-@media (max-width: 600px) {
-    /* 页眉文字缩小 */
+@media only screen and (max-width: 600px) {
+
+    /* 页眉 */
+    header {
+        padding: 15px;
+        text-align: center;
+    }
+
     header h1 {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     header p {
         font-size: 14px;
     }
 
-    /* 导航栏竖排 */
+    /* 导航保持一排 */
     nav {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        background-color: #3e3e3e;
     }
 
     nav a {
-        display: block;
-        width: 100%;
+        font-size: 14px;
+        padding: 10px;
         text-align: center;
-        padding: 12px;
-        border-bottom: 1px solid #444;
     }
 
-    /* 卡片容器一列 */
-    .card-container {
-        flex-direction: column;
-        align-items: center;
+    /* 影视模块卡片保持三列 */
+    /* #movie-content, #movie-types {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 
-    /* 卡片宽度全屏 */
-    .card,
-    .quote-card,
-    .photo-card {
-        width: 100%;
-        max-width: 90%; /* 给点留白 */
+    #movie-content .card, #movie-types .type-card {
+        width: 30%;
+    } */
+
+    /* 影视模块三列 */
+    #movie-types .type-card,
+    #movie-content .card {
+        width: 30%; /* 三张一排 */
     }
 
-    /* quote 中文和英文字号缩小 */
+    /* 文案卡片、音乐卡片、照片墙：两列 */
+    .quote-container, .card-container:not(#movie-content):not(#movie-types), .photo-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .quote-card, .card, .photo-card {
+        width: 40%; /* 两张一排 */
+    }
+
     .quote-card .chinese {
         font-size: 15px;
     }
@@ -265,12 +288,21 @@ footer {
         font-size: 13px;
     }
 
-    /* 返回按钮拉长而不是正方形 */
+    .photo-detail {
+        font-size: 13px;
+    }
+
+    /* 返回按钮 */
     .back-btn {
-        width: 100%;
-        height: auto;
-        padding: 12px;
-        line-height: normal;
+        width: 90%;
+        height: 40px;
         font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    /* 页脚 */
+    footer {
+        font-size: 12px;
+        padding: 10px;
     }
 }
