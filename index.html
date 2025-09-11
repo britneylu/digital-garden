@@ -61,7 +61,8 @@
             tv: [
                 { name: '爱你', rating: '★★★★★', comment: '我的人生剧！非常治愈的一部。颜值就不用我多说了吧，好看的人在一起cp感绝对upup。推荐大家都去看。', img: './images/ai_ni_img.png' },
                 { name: 'The Residence', rating: '★★★★☆', comment: '剧情十分紧凑环环紧扣但超搞笑的。你绝对猜不到结局。', img: './images/the_residence.jpeg' },
-                { name: '苦尽甘来遇见你', rating: '★★★★★', comment: '不是很喜欢年代剧但是这部真的很精彩很真实，演员演技在线。每一集我的眼睛就跟开了水龙头一样。', img: './images/when_life_gives_you_tangerines.png' }
+                { name: '苦尽甘来遇见你', rating: '★★★★★', comment: '不是很喜欢年代剧但是这部真的很精彩很真实，演员演技在线。每一集我的眼睛就跟开了水龙头一样。', img: './images/when_life_gives_you_tangerines.png' },
+                { name: '请回答1988', rating: '★★★★★', comment: '每次看完都想起小时候的自己，满满的回忆杀。', img: './images/please_answer_1988.jpg' }
             ],
             movie: [
                 { name: '消失的她', rating: '★★★★☆', comment: '结局真的意想不到，吓鼠我了。', img: './images/xiao_shi_de_ta.png' },
@@ -75,13 +76,17 @@
 
         // 点击类型卡片时显示对应影视作品
         function showMovieCategory(category) {
-            const typesDiv = document.getElementById('movie-types'); // 类型选择卡容器
-            const contentDiv = document.getElementById('movie-content'); // 作品卡片容器
-            typesDiv.style.display = 'none'; // 隐藏类型选择
-            contentDiv.style.display = 'flex'; // 显示作品容器
-            contentDiv.innerHTML = ''; // 清空之前内容
+            const typesDiv = document.getElementById('movie-types');
+            const contentDiv = document.getElementById('movie-content');
+            typesDiv.style.display = 'none';
+            contentDiv.style.display = 'block'; // 用 block 包裹所有
 
-            // 创建返回按钮
+            contentDiv.innerHTML = '';
+
+            // 创建一个外层容器
+            const wrapper = document.createElement('div');
+
+            // 返回按钮单独一行
             const backBtn = document.createElement('button');
             backBtn.textContent = '← 返回类型选择';
             backBtn.className = 'back-btn';
@@ -89,21 +94,25 @@
                 contentDiv.style.display = 'none';
                 typesDiv.style.display = 'flex';
             };
-            contentDiv.appendChild(backBtn);
 
-            // 动态生成作品卡片
+            contentDiv.appendChild(backBtn); // 单独插进去按钮
+            contentDiv.appendChild(wrapper); // 插入卡片容器
+
+            wrapper.className = 'card-container'; // 卡片容器
+            // 动态生成卡片
             movieData[category].forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'card';
                 card.innerHTML = `
-                    <img src="${item.img}" alt="${item.name}">
-                    <h3>${item.name}</h3>
-                    <p>评分: ${item.rating}</p>
-                    <p>点评: ${item.comment}</p>
-                `;
-                contentDiv.appendChild(card);
+            <img src="${item.img}" alt="${item.name}">
+            <h3>${item.name}</h3>
+            <p>评分: ${item.rating}</p>
+            <p>点评: ${item.comment}</p>
+        `;
+                wrapper.appendChild(card);
             });
         }
+
     </script>
 
     <!-- 文案收藏模块 -->
