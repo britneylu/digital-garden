@@ -72,7 +72,7 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* 返回按钮样式 */
+/* 影视返回按钮样式 */
 .back-btn {
     width: 150px;
     /* 固定宽度 */
@@ -134,7 +134,7 @@ h2 {
     border-radius: 4px;
 }
 
-/* 文案样式 */
+/* ---------------- 文案样式 ---------------- */
 .quote-container {
     display: flex;
     flex-wrap: wrap;
@@ -167,7 +167,7 @@ h2 {
     font-size: 14px;
 }
 
-/* 音乐样式 */
+/* ---------------- 音乐样式 ---------------- */
 .card a {
     color: inherit; /* 继承父元素颜色 */
     text-decoration: none; /* 去掉下划线 */
@@ -189,6 +189,7 @@ h2 {
     font-size: 16px;
 }
 
+/* ---------------- 美食样式 ---------------- */
 #food .card h3 {
     margin: 6px 0;      /* 减小上下间距 */
     font-size: 20px;
@@ -201,6 +202,7 @@ h2 {
     font-size: 16px;
 }
 
+/* ---------------- 音乐样式 ---------------- */
 /* 音乐卡片整体 */
 #music .card {
     padding-top: 10px;   /* 让文字靠上 */
@@ -239,7 +241,7 @@ h2 {
 } */
 
 
-/* 照片墙样式 */
+/* ---------------- 照片墙样式 ---------------- */
 .photo-container {
     display: flex;
     flex-wrap: wrap;
@@ -291,51 +293,6 @@ h2 {
     margin: 4px 0;
 }
 
-/* Professional Section */
-#professional {
-    margin-top: 40px;
-    text-align: left;
-    padding: 20px;
-}
-
-#professional h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-#professional p {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 15px;
-}
-
-.link-buttons {
-    display: flex;
-    justify-content: flex-start;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.btn-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
-    border: 2px solid #0077b5; /* LinkedIn 蓝色 */
-    border-radius: 6px;
-    font-size: 16px;
-    text-decoration: none;
-    color: #0077b5;
-    font-weight: bold;
-    transition: all 0.2s ease;
-}
-
-.btn-link:hover {
-    background: #0077b5;
-    color: #fff;
-}
-
-
 /* ---------------- 页脚样式 ---------------- */
 footer {
     text-align: center;
@@ -379,6 +336,22 @@ footer {
     /* 影视类型选择：三列 */
     #movie-types .type-card {
         width: 30%;
+    }
+
+    /* 影视返回按钮 */
+    .back-btn {
+        width: 95%;
+        height: 40px;
+        font-size: 14px;
+        margin-bottom: 10px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        /* 水平居中 */
+        align-items: center;
+        /* 垂直居中 */
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
     /* 影视卡片：两列 */
@@ -481,47 +454,6 @@ footer {
 
     #music .card h3 a:hover {
         color: #5986d8;    /* 鼠标悬停时高亮 */
-    }
-
-    /* 返回按钮 */
-    .back-btn {
-        width: 95%;
-        height: 40px;
-        font-size: 14px;
-        margin-bottom: 10px;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        /* 水平居中 */
-        align-items: center;
-        /* 垂直居中 */
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    #professional h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    }
-
-    #professional p {
-        font-size: 14px;
-        color: #555;
-        margin-bottom: 15px;
-    }
-
-    .btn-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 8px 14px;
-        border: 2px solid #0077b5; /* LinkedIn 蓝色 */
-        border-radius: 6px;
-        font-size: 12px;
-        text-decoration: none;
-        color: #0077b5;
-        font-weight: bold;
-        transition: all 0.2s ease;
     }
 
     /* 页脚 */
