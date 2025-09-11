@@ -5,6 +5,8 @@ body {
     padding: 0;
     background-color: #e8e8e8;
     color: #333;
+
+    zoom: 0.9; /* 全局缩小10% */
 }
 
 h1,
