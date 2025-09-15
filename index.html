@@ -63,7 +63,7 @@
                 { name: 'The Residence', rating: '★★★★☆', comment: '剧情十分紧凑环环紧扣但超搞笑的。你绝对猜不到结局。', img: './images/ying_shi/the_residence.jpeg' },
                 { name: '苦尽甘来遇见你', rating: '★★★★★', comment: '不是很喜欢年代剧但是这部真的很精彩很真实，演员演技在线。每一集我的眼睛就跟开了水龙头一样。', img: './images/ying_shi/when_life_gives_you_tangerines.png' },
                 { name: '难哄', rating: '★★★☆☆', comment: '只能说如果不是冲着白敬亭和章若楠，我早就弃剧了。剧情实在是有点拉垮，男女主都不长嘴。', img: './images/ying_shi/nan_hong.png' },
-                { name: 'The White Lotus', rating: '★★★★☆', comment: '挺好看的就是ummm尺度有点大。每一季的主题曲都很魔性哈。超喜欢Tanya这个角色，傻傻的富婆。', img: './images/ying_shi/the_white_lotus.jpg' },
+                { name: 'The White Lotus', rating: '★★★★☆', comment: '挺好看的就是ummm尺度有点大。每一季的片头都很魔性哈。超喜欢Tanya这个角色，傻傻的富婆。', img: './images/ying_shi/the_white_lotus.jpg' },
                 { name: '九重紫', rating: '★★★★★', comment: '还得是将军。豹豹猫猫99！', img: './images/ying_shi/jiu_chon_zi.jpeg' }
             ],
             movie: [
@@ -73,7 +73,7 @@
             show: [
                 { name: '花儿与少年·丝路季', rating: '★★★★★', comment: '这就是群像的魅力！', img: './images/ying_shi/hua_shao_img.jpg' },
                 { name: '女子推理社', rating: '★★★★★', comment: '每个案例都是生活中真实存在的。每期都能体现出女性的力量。', img: './images/ying_shi/nv_zhi_tui_li_she.png' },
-                { name: '心动的信号', rating: '★★★★☆', comment: '一季不落的恋综，节目组老爱剪三角恋。但最近磕上了乐远cp。我的cp必须是真的！', img: './images/ying_shi/xin_dong_de_xin_hao.png' }, 
+                { name: '心动的信号', rating: '★★★★☆', comment: '一季不落的恋综，节目组老爱剪三角恋。但最近磕上了乐远cp。我的cp必须是真的！', img: './images/ying_shi/xin_dong_de_xin_hao.png' },
                 { name: 'Biong Biong地球游戏厅', rating: '★★★★★', comment: '这是我看过最好看的韩综！每期我都像个傻子一样爆笑。每次到随舞环节我都震撼，怎么能这么齐，四个人都是使不完的牛劲。', img: './images/ying_shi/biong_biong.png' }
             ]
         };
@@ -147,6 +147,17 @@
                 <p class="chinese">好事总发生在下一个转弯。</p>
                 <p class="english">The best surprises always happen at the next turn.</p>
             </div>
+            <div class="quote-card">
+                <p class="chinese">
+                    成年人的世界，只筛选，不教育；只选择，不改变。你有你的立场，我有我的底线，分寸感很重要，教什么都不要教人做人。每个人的人生，都在为自己的认知买单，自己不醒悟，他人如何渡？自己若醒悟，何须他人渡！
+                </p>
+            </div>
+            <div class="quote-card">
+                <p class="chinese">别晒幸福，别晒甜蜜，也别晒成功。生活常识告诉我们，晒会失去水分，冷藏才是保鲜的最好方式。</p>
+            </div>
+            <div class="quote-card">
+                <p class="chinese">相信破窗效应，不要轻易对任何人说你不幸遭遇，不要试图通过倾诉自己的不幸拉近彼此关系，否则你的不幸会成为别人伤害你的利刃。</p>
+            </div>
     </section>
 
 
@@ -201,46 +212,109 @@
 
     <!-- 音乐模块 -->
     <section id="music">
-        <h2>🎶 音乐收藏（无限播放的那种）</h2>
-        <div class="card-container">
-            <div class="card">
-                <h3><a href="https://www.youtube.com/watch?v=OPN92RL6tBY" target="_blank"> <i
-                            class="fa-solid fa-play"></i> 沦陷 (Sink Into)</a></h3>
-                <p>歌手: Juggshots</p>
-                <p>类型: rnb</p>
+        <h2>🎵 音乐收藏（无限播放的那种）</h2>
+
+        <!-- 音乐类型选择 -->
+        <div id="music-types" class="card-container">
+            <div class="type-card" onclick="showMusicCategory('rnb')">
+                <h3>RnB</h3>
             </div>
-            <div class="card">
-                <h3><a href="https://www.youtube.com/watch?v=O9T385SowTk" target="_blank"> <i
-                            class="fa-solid fa-play"></i> 零距离的思念</a></h3>
-                <p>歌手: TINY7</p>
-                <p>类型: rnb</p>
+            <div class="type-card" onclick="showMusicCategory('kpop')">
+                <h3>Kpop</h3>
             </div>
-            <div class="card">
-                <h3><a href="https://www.youtube.com/watch?v=gZJbR0JL638&list=RDgZJbR0JL638&start_radio=1"
-                        target="_blank"> <i class="fa-solid fa-play"></i> 放大</a></h3>
-                <p>歌手: 徐子未</p>
-                <p>类型: rnb</p>
-            </div>
-            <div class="card">
-                <h3><a href="https://www.youtube.com/watch?v=WXS-o57VJ5w" target="_blank"> <i
-                            class="fa-solid fa-play"></i> GO!</a></h3>
-                <p>歌手: CORTIS</p>
-                <p>类型: kpop</p>
-            </div>
-            <div class="card">
-                <h3><a href="https://www.youtube.com/watch?v=vfyqAkT4uDU&list=RDvfyqAkT4uDU&start_radio=1"
-                        target="_blank"> <i class="fa-solid fa-play"></i> LAST GOODBYE</a></h3>
-                <p>歌手: sunkis</p>
-                <p>类型: rnb</p>
-            </div>
-            <div class="card">
-                <h3><a href="https://youtube.com/playlist?list=PLxA687tYuMWh-Ib4NLklkOMy_2Ig-1XNY&si=BOIFx8wOnRHmnpFL"
-                        target="_blank"> <i class="fa-solid fa-play"></i> rosie专辑</a></h3>
-                <p>歌手: ROSÉ</p>
-                <p>类型: kpop</p>
+            <div class="type-card" onclick="showMusicCategory('cpop')">
+                <h3>Cpop</h3>
             </div>
         </div>
+
+        <!-- 动态显示影视作品卡片 -->
+        <div id="music-content" class="card-container" style="display:none;">
+            <!-- JS 会生成对应作品卡片 -->
+        </div>
     </section>
+
+    <!-- 影视模块的 JS 动态内容 -->
+    <script>
+        // 每个类型的音乐数据
+        const musicData = {
+            rnb: [
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=OPN92RL6tBY" target="_blank"><i class="fa-solid fa-play"></i> 沦陷 (Sink Into)</a>',
+                    singer: 'Juggshots',
+                    genre: 'RnB'
+                },
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=O9T385SowTk" target="_blank"><i class="fa-solid fa-play"></i> 零距离的思念</a>',
+                    singer: 'TINY7',
+                    genre: 'RnB'
+                },
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=gZJbR0JL638&list=RDgZJbR0JL638&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> 放大</a>',
+                    singer: '徐子未',
+                    genre: 'RnB'
+                },
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=vfyqAkT4uDU&list=RDvfyqAkT4uDU&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> LAST GOODBYE</a>',
+                    singer: 'sunkis',
+                    genre: 'RnB'
+                }
+            ],
+            kpop: [
+                {
+                    name: '<a href="https://youtube.com/playlist?list=PLxA687tYuMWh-Ib4NLklkOMy_2Ig-1XNY&si=BOIFx8wOnRHmnpFL" target="_blank"><i class="fa-solid fa-play"></i> rosie全专辑</a>',
+                    singer: 'ROSÉ',
+                    genre: 'kpop'
+                },
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=WXS-o57VJ5w" target="_blank"><i class="fa-solid fa-play"></i> GO!</a>',
+                    singer: 'CORTIS',
+                    genre: 'kpop'
+                }
+            ],
+            cpop: [
+                
+            ]
+        };
+
+        // 点击类型卡片时显示对应音乐
+        function showMusicCategory(category) {
+            const typesDiv = document.getElementById('music-types');
+            const contentDiv = document.getElementById('music-content');
+            typesDiv.style.display = 'none';
+            contentDiv.style.display = 'block';
+
+            contentDiv.innerHTML = '';
+
+            // 返回按钮
+            const backBtn = document.createElement('button');
+            backBtn.textContent = '← 返回类型选择';
+            backBtn.className = 'back-btn';
+            backBtn.onclick = () => {
+                contentDiv.style.display = 'none';
+                typesDiv.style.display = 'flex';
+            };
+            contentDiv.appendChild(backBtn);
+
+            // 卡片容器
+            const wrapper = document.createElement('div');
+            wrapper.className = 'card-container';
+            contentDiv.appendChild(wrapper);
+
+            // 动态生成卡片
+            musicData[category].forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                <h3>${item.name}</h3>
+                <p>歌手: ${item.singer}</p>
+                <p>类型: ${item.genre}</p>
+            `;
+                wrapper.appendChild(card);
+            });
+        }
+    </script>
+
+
 
     <!-- 照片墙模块 -->
     <section id="photo-wall">
@@ -263,7 +337,7 @@
                     <p>Vanderbilt Beach <i class="fa-solid fa-expand"></i></p>
                 </summary>
                 <div class="photo-detail">
-                    <p>这张照片是在夏天去纽约长岛的时候拍的，海风很舒服。</p>
+                    <p>这张照片是在纽约长岛的时候拍的，海风很舒服。</p>
                     <p>拍摄日期: 08-10-2024</p>
                 </div>
             </details>
