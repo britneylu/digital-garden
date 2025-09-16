@@ -262,6 +262,10 @@ h2 {
     margin: 4px 0;
 }
 
+.photo-card summary::-webkit-details-marker {
+        display: none; /* 专门去掉 Chrome/Safari 的小三角 */
+    }
+
 /* ---------------- 页脚样式 ---------------- */
 footer {
     text-align: center;
@@ -437,9 +441,34 @@ footer {
         line-height: 1.4;
     }
 
+    .photo-card summary::-webkit-details-marker {
+        display: none; /* 专门去掉 Chrome/Safari 的小三角 */
+    }
+
     /* 页脚 */
     footer {
         font-size: 12px;
         padding: 10px;
+    }
+}
+
+/* ================== ipad端适配portrait/vertical ================== */
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+
+    /* 样式 */
+    body {
+        zoom: 0.85;
+    }
+
+    /* 美食卡片容器 */
+    #food .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .photo-card summary::-webkit-details-marker {
+        display: none; /* 专门去掉 Chrome/Safari 的小三角 */
     }
 }
