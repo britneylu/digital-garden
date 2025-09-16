@@ -460,8 +460,28 @@ footer {
         zoom: 0.85;
     }
 
+    /* 影视 */
+    #movies .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .back-btn {
+    margin-left: 110px;
+    }
+
     /* 美食卡片容器 */
     #food .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    /* 音乐 */
+    #music .card-container {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
