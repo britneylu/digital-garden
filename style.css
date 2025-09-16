@@ -6,7 +6,7 @@ body {
     background-color: #e8e8e8;
     color: #333;
 
-    zoom: 0.85; /* 全局缩小10% */
+    zoom: 0.85; /* 全局缩小15% */
 }
 
 h1,
@@ -277,7 +277,6 @@ footer {
 
 /* ================== 手机端适配 ================== */
 @media only screen and (max-width: 600px) {
-
     /* 页眉 */
     header {
         padding: 15px;
@@ -458,6 +457,33 @@ footer {
     /* 样式 */
     body {
         zoom: 0.85;
+    }
+
+    header h1 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    header p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #f0f0f0; /* 白色或浅色，和背景对比 */
+        margin: 0;
+    }
+
+    /* 导航栏样式 */
+    nav {
+        background-color: #3e3e3e;
+    }
+
+    /* 导航链接样式 */
+    nav a {
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        padding: 12px 20px;
+        display: inline-block;
+        transition: background-color 0.3s;
     }
 
     /* 影视 */
