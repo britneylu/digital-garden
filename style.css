@@ -444,6 +444,10 @@ footer {
         display: none; /* 专门去掉 Chrome/Safari 的小三角 */
     }
 
+    .photo-card summary p {
+        font-size: 16px;
+    }
+
     /* 页脚 */
     footer {
         font-size: 12px;
