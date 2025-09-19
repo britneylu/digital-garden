@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jiliguLU-ing</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Language Switch -->
+    <div class="lang-switch">
+        <a href="index.html">中文 (Chinese)</a>
+    </div>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>jiliguLU-ing</h1>
+        <p>🌱 Welcome to my digital garden 👩🏻‍🌾<br>
+            Not a rigid archive, but a place where ideas take root and memories bloom—a collection of fleeting sparks and everyday fragments. </p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#movies">Films</a>
+        <a href="#quotes">Quotes</a>
+        <a href="#food">Food</a>
+        <a href="#music">Music</a>
+        <a href="#photo-wall">Photo Wall</a>
+    </nav>
+
+    <!-- Movies Section -->
+    <section id="movies">
+        <h2>🎬 Films</h2>
+        <div id="movie-types" class="card-container">
+            <div class="type-card" onclick="showMovieCategory('tv')">
+                <h3>Dramas</h3>
+            </div>
+            <div class="type-card" onclick="showMovieCategory('movie')">
+                <h3>Movies</h3>
+            </div>
+            <div class="type-card" onclick="showMovieCategory('show')">
+                <h3>Variety Shows</h3>
+            </div>
+        </div>
+
+        <div id="movie-content" class="card-container" style="display:none;">
+            <!-- JS will fill content -->
+        </div>
+    </section>
+
+    <script>
+        const movieData = {
+            tv: [
+                { name: 'The Best Thing', rating: '★★★★★', comment: 'My all-time favorite drama! So healing, and the cast chemistry is unbeatable.', img: './images/ying_shi/ai_ni_img.png' },
+                { name: 'The Residence', rating: '★★★★☆', comment: 'Tightly written, suspenseful but hilarious. You’ll never guess the ending.', img: './images/ying_shi/the_residence.jpeg' },
+                { name: 'When Life Gives You Tangerines', rating: '★★★★★', comment: 'Not usually into period dramas, but this one was raw and powerful. I cried every episode.', img: './images/ying_shi/when_life_gives_you_tangerines.png' },
+                { name: 'The First Frost', rating: '★★★☆☆', comment: 'If not for the leads, I would’ve dropped it. Plot is weak, both characters lack communication.', img: './images/ying_shi/nan_hong.png' },
+                { name: 'The White Lotus', rating: '★★★★☆', comment: 'Loved it, though a bit explicit. The intro theme is addictive. Tanya is my fave—chaotic rich woman energy.', img: './images/ying_shi/the_white_lotus.jpg' },
+                { name: 'Blossom', rating: '★★★★★', comment: 'The General wins it all. Iconic.', img: './images/ying_shi/jiu_chon_zi.jpeg' },
+                { name: 'Legend of The Female General', rating: '★★★★★', comment: 'I love the moon, but the moon doesn’t know.', img: './images/ying_shi/jin_yue_ru_ge.png' }
+            ],
+            movie: [
+                { name: 'Lost in the Stars', rating: '★★★★☆', comment: 'The ending was shocking—I did not see that coming.', img: './images/ying_shi/xiao_shi_de_ta.png' },
+                { name: 'Hi, Mom', rating: '★★★☆☆', comment: 'Felt average overall, but the last 30 minutes made me cry.', img: './images/ying_shi/ni_hao_li_huan_ying.jpg' },
+                { name: 'No More Bets', rating: '★★★★☆', comment: 'Loved the scene where Cai helped Anna escape. A fraud thriller with a hint of romance.', img: './images/ying_shi/gu_zhu_yi_zhi.jpg' }
+            ],
+            show: [
+                { name: 'Divas Hit the Road: Silk Road', rating: '★★★★★', comment: 'The group dynamics is crazy good!', img: './images/ying_shi/hua_shao_img.jpg' },
+                { name: 'Sherlock', rating: '★★★★★', comment: 'Each case is based on real-life issues. Women’s strength shines every episode.', img: './images/ying_shi/nv_zhi_tui_li_she.png' },
+                { name: 'Heart Signal', rating: '★★★★☆', comment: 'Never missed a season. Too many love triangles, but I recently I have benn shipping LeYuan CP to much. They must be real!', img: './images/ying_shi/xin_dong_de_xin_hao.png' },
+                { name: 'Earth Arcade', rating: '★★★★★', comment: 'Funniest Korean variety show ever! I laugh like a fool every episode. The random dance challenge is always insane.', img: './images/ying_shi/biong_biong.png' }
+            ]
+        };
+
+        function showMovieCategory(category) {
+            const typesDiv = document.getElementById('movie-types');
+            const contentDiv = document.getElementById('movie-content');
+            typesDiv.style.display = 'none';
+            contentDiv.style.display = 'block';
+            contentDiv.innerHTML = '';
+
+            const backBtn = document.createElement('button');
+            backBtn.textContent = '← Back to categories';
+            backBtn.className = 'back-btn';
+            backBtn.onclick = () => {
+                contentDiv.style.display = 'none';
+                typesDiv.style.display = 'flex';
+            };
+            contentDiv.appendChild(backBtn);
+
+            const wrapper = document.createElement('div');
+            wrapper.className = 'card-container';
+            contentDiv.appendChild(wrapper);
+
+            movieData[category].forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+            <img src="${item.img}" alt="${item.name}">
+            <h3>${item.name}</h3>
+            <p>Rating: ${item.rating}</p>
+            <p>Notes: ${item.comment}</p>
+        `;
+                wrapper.appendChild(card);
+            });
+        }
+    </script>
+
+    <!-- Quotes Section -->
+    <section id="quotes">
+        <h2>📝 Quotes</h2>
+        <div class="quote-container">
+            <div class="quote-card">
+                <p class="chinese">不要因为别人交卷了，就乱写答案。</p>
+                <p class="english">Move at your own pace, on your own path. Your lane, your race, your pace.</p>
+            </div>
+            <div class="quote-card">
+                <p class="chinese">如果你太留恋过去的自己，将永远无法成为你想成为的人。</p>
+                <p class="english">If you dwell too much on your past self, you'll never become who you want to be.</p>
+            </div>
+            <div class="quote-card">
+                <p class="chinese">无需比较，我独我。</p>
+                <p class="english">No need to compare; I am uniquely myself.</p>
+            </div>
+            <div class="quote-card">
+                <p class="chinese">车到山头必有路，船到桥头自然直。</p>
+                <p class="english">Where there‘s a will, there’s a way.</p>
+            </div>
+            <div class="quote-card">
+                <p class="chinese">性格因人而异即兴发挥。</p>
+                <p class="english">Different vibes, different styles—just freestyle it.</p>
+            </div>
+            <div class="quote-card">
+                <p class="chinese">好事总发生在下一个转弯。</p>
+                <p class="english">The best surprises always happen at the next turn.</p>
+            </div>
+            <div class="quote-card">
+                <p class="chinese">别晒幸福，别晒甜蜜，也别晒成功。生活常识告诉我们，晒会失去水分，冷藏才是保鲜的最好方式。</p>
+                <p class="english">Happiness is best kept private—what is shown off often fades.</p>
+            </div>
+            <div class="quote-card">
+                <p class="chinese">相信破窗效应，不要轻易对任何人说你不幸遭遇，否则你的不幸会成为别人伤害你的利刃。</p>
+                <p class="english">Not everyone deserves to know your struggles; some will use them against you.</p>
+            </div>
+            <div class="quote-card">
+                <p class="chinese">成年人的世界，只筛选，不教育；只选择，不改变。</p>
+                <p class="english">In the adult world, we don't change people, we choose who to keep around.</p>
+            </div>
+    </section>
+
+    <!-- Food Section -->
+    <section id="food">
+        <h2>🍜 Food</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3><a href="https://maps.app.goo.gl/rnVCYeFLPnk68pjcA" target="_blank">Chushang Mala <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+                <p>Type: Chinese</p>
+                <p>Rating: ★★★★★</p>
+                <p>Note: Friends, promise me you must go try the mala tang when you’re in Philly.</p>
+            </div>
+            <div class="card">
+                <h3><a href="https://maps.app.goo.gl/2UB645ChK5HBfbdG9" target="_blank">Dubu <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+                <p>Type: Korean</p>
+                <p>Rating: ★★★★★</p>
+                <p>Note: Order anything—it’s all solid and safe.</p>
+            </div>
+            <div class="card">
+                <h3><a href="https://maps.app.goo.gl/eErHbX4RPvxfhCBB8" target="_blank">Yi Pin Tian Xia <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+                <p>Type: Chinese</p>
+                <p>Rating: ★★★★☆</p>
+                <p>Note: Try the corn kernels and spicy beef slices.</p>
+            </div>
+            <div class="card">
+                <h3><a href="https://maps.app.goo.gl/KUuwA1icWsnbH31s9" target="_blank">Hey Yogurt <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+                <p>Type: Drinks/Dessert</p>
+                <p>Rating: ★★★☆☆</p>
+                <p>Note: Not ideal after a meal. Slightly overrated.</p>
+            </div>
+            <div class="card">
+                <h3><a href="https://maps.app.goo.gl/CYtsEizsg5rTc9L58" target="_blank">Chi Cha 3000 <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+                <p>Type: Drinks/Dessert</p>
+                <p>Rating: ★★★★☆</p>
+                <p>Note: Stronger tea flavor—just the way I like it.</p>
+            </div>
+            <div class="card">
+                <h3><a href="https://maps.app.goo.gl/ZvWGXsqVFAEJBH7s9" target="_blank">Molly Tea <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+                <p>Type: Drinks/Dessert</p>
+                <p>Rating: ★★★★☆</p>
+                <p>Note: Highly recommend White Champaca Milk Tea (the black cup one) with 30% sugar. Others taste
+                    similar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music">
+        <h2>🎵 Music (on LoOp)</h2>
+        <div id="music-types" class="card-container">
+            <div class="type-card" onclick="showMusicCategory('rnb')">
+                <h3>rnb</h3>
+            </div>
+            <div class="type-card" onclick="showMusicCategory('kpop')">
+                <h3>kpop</h3>
+            </div>
+            <div class="type-card" onclick="showMusicCategory('cpop')">
+                <h3>cpop</h3>
+            </div>
+        </div>
+        <div id="music-content" class="card-container" style="display:none;"></div>
+    </section>
+
+    <script>
+        const musicData = {
+            rnb: [
+                { 
+                    name: '<a href="https://www.youtube.com/watch?v=OPN92RL6tBY" target="_blank"><i class="fa-solid fa-play"></i> Sink Into</a>', 
+                    singer: 'Juggshots', 
+                    genre: 'rnb/cpop'
+                },
+                { 
+                    name: '<a href="https://www.youtube.com/watch?v=O9T385SowTk" target="_blank"><i class="fa-solid fa-play"></i> 零距离的思念</a>', 
+                    singer: 'TINY7', 
+                    genre: 'rnb/cpop' 
+                },
+                { 
+                    name: '<a href="https://www.youtube.com/watch?v=gZJbR0JL638&list=RDgZJbR0JL638&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> 放大</a>', 
+                    singer: 'Ziwei Xu', 
+                    genre: 'rnb/cpop' 
+                },
+                { 
+                    name: '<a href="https://www.youtube.com/watch?v=vfyqAkT4uDU&list=RDvfyqAkT4uDU&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> Last Goodbye</a>', 
+                    inger: 'sunkis', 
+                    genre: 'rnb/pop' 
+                },
+                { 
+                    name: '<a href="https://www.youtube.com/watch?v=XhUXUYEwYf0&list=RDXhUXUYEwYf0&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> 漫步香港 1999</a>', 
+                    singer: 'Bruce Allen', 
+                    genre: 'rnb/cpop' 
+                }
+            ],
+            kpop: [
+                { 
+                    name: '<a href="https://youtube.com/playlist?list=PLxA687tYuMWh-Ib4NLklkOMy_2Ig-1XNY&si=BOIFx8wOnRHmnpFL" target="_blank"><i class="fa-solid fa-play"></i> ROSÉ Album</a>', 
+                    singer: 'ROSÉ', 
+                    genre: 'kpop' 
+                },
+                { 
+                    name: '<a href="https://www.youtube.com/watch?v=e2OpbOv_JiQ&list=RDe2OpbOv_JiQ&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> What You Want</a>', 
+                    singer: 'CORTIS', 
+                    genre: 'kpop' 
+                },
+                { 
+                    name: '<a href="https://www.youtube.com/watch?v=JkEeQK3yNv8&list=RDJkEeQK3yNv8&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> Peach Gelato</a>', 
+                    singer: 'TWICE', 
+                    genre: 'kpop' 
+                },
+                { 
+                    name: '<a href="https://www.youtube.com/watch?v=1P8BbTY8gWo" target="_blank"><i class="fa-solid fa-play"></i> My Way</a>', 
+                    singer: 'KATSEYE', 
+                    genre: 'kpop' 
+                }
+            ],
+            cpop: [
+                { 
+                    name: '<a href="https://www.youtube.com/watch?v=Rk4CsJ9X_tU&list=RDRk4CsJ9X_tU&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> 你最近还好吗</a>', 
+                    singer: 'Lil Ghost', 
+                    genre: 'cpop/rap' 
+                },
+                { 
+                    name: '<a href="https://www.youtube.com/watch?v=i7c9YeHj-Ys" target="_blank"><i class="fa-solid fa-play"></i> 小宇</a>', 
+                    singer: 'Lan Xinyu (cover)', 
+                    genre: 'cpop' 
+                },
+                { 
+                    name: '<a href="https://www.youtube.com/watch?v=sMWRdxF05-8" target="_blank"><i class="fa-solid fa-play"></i> 茫</a>', 
+                    singer: 'Runqi Li', 
+                    genre: 'cpop' 
+                }
+            ]
+        };
+
+        function showMusicCategory(category) {
+            const typesDiv = document.getElementById('music-types');
+            const contentDiv = document.getElementById('music-content');
+            typesDiv.style.display = 'none';
+            contentDiv.style.display = 'block';
+            contentDiv.innerHTML = '';
+
+            const backBtn = document.createElement('button');
+            backBtn.textContent = '← Back to categories';
+            backBtn.className = 'back-btn';
+            backBtn.onclick = () => {
+                contentDiv.style.display = 'none';
+                typesDiv.style.display = 'flex';
+            };
+            contentDiv.appendChild(backBtn);
+
+            const wrapper = document.createElement('div');
+            wrapper.className = 'card-container';
+            contentDiv.appendChild(wrapper);
+
+            musicData[category].forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                <h3>${item.name}</h3>
+                <p>Singer: ${item.singer}</p>
+                <p>Genre: ${item.genre}</p>
+            `;
+                wrapper.appendChild(card);
+            });
+        }
+    </script>
+
+    <!-- Photo Wall -->
+    <section id="photo-wall">
+        <h2>📸 Photo Wall</h2>
+        <div class="photo-container">
+            <details class="photo-card">
+                <summary>
+                    <img src="images/photo_wall/santa_monica.jpg" alt="照片1">
+                    <p>Santa Monica, CA <i class="fa-solid fa-expand"></i></p>
+                </summary>
+                <div class="photo-detail">
+                    <p>The ocean in California is so healing. A seagull photobombed right as I captured.</p>
+                    <p>Date: 12-22-2023</p>
+                </div>
+            </details>
+
+            <details class="photo-card">
+                <summary>
+                    <img src="images/photo_wall/vanderbilt.jpg" alt="照片1">
+                    <p>Vanderbilt Beach <i class="fa-solid fa-expand"></i></p>
+                </summary>
+                <div class="photo-detail">
+                    <p>This was in Long Island, NY. The sea breeze was so nice.</p>
+                    <p>Date: 08-10-2024</p>
+                </div>
+            </details>
+
+            <details class="photo-card">
+                <summary>
+                    <img src="images/photo_wall/blackpink.png" alt="照片2">
+                    <p>Blackpink Concert <i class="fa-solid fa-expand"></i></p>
+                </summary>
+                <div class="photo-detail">
+                    <p>The opening stage—I was so hyped. It’s funny how everyone in the crowd was filming nonstop and
+                        had the same pose.</p>
+                    <p>Date: 7-26-2025</p>
+                </div>
+            </details>
+        </div>
+    </section>
