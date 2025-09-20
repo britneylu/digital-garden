@@ -24,8 +24,66 @@
         <h1>小卢的叽里咕卢</h1>
         <p>🌱 欢迎来到我的 数字小花园 👩🏻‍🌾<br>
             这里不是高冷的知识库，而是我随手种下的碎片和灵感：<br> 记录生活的点点滴滴</p>
+
+        <!-- Info button -->
+        <button id="openReadme" class="info-btn">
+            <i class="fa-solid fa-circle-info"></i> 关于本站
+        </button>
     </header>
 
+    <!-- 关于本站info -->
+    <div id="readmeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>🌱 My Digital Garden（数字花园）</h2>
+            <p>👉 在线逛逛：<a href="https://britneylu.github.io/digital-garden/" target="_blank">点击这里</a></p>
+
+            <p>欢迎来到我的 <strong>数字小花园</strong> 👩🏻‍🌾
+                这里不是高冷的知识库，而是我随手种下的碎片和灵感：</p>
+
+            <ul>
+                <li>🎬 我追过的 <b>电视剧 / 电影 / 综艺</b></li>
+                <li>📝 触动我的 <b>文案句子</b>（中英文对照，双倍感动 💌）</li>
+                <li>🍜 让我念念不忘的 <b>美食</b></li>
+                <li>🎶 无限循环的 <b>音乐</b></li>
+                <li>📸 记录心情的 <b>照片墙</b></li>
+            </ul>
+
+            <h3>🏗️ 项目简介</h3>
+            <p>这是一个轻量级的网页项目，用 <b>HTML + CSS + JS</b> 完成：</p>
+            <ul>
+                <li>🛠️ <b>零框架</b>，纯手工搭建（好吧 GPT 老师确实帮了一点忙）</li>
+                <li>⚡ <b>简洁清爽</b>，加载飞快</li>
+                <li>✨ <b>随缘更新</b>，想到什么写什么</li>
+            </ul>
+
+            <p>就像一块小院子：今天种点番茄，明天撒些花籽，慢慢生长。</p>
+
+            <blockquote>
+                <b> > 慢慢走，慢慢种。🌸</b><br>
+            </blockquote>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("readmeModal");
+        const btn = document.getElementById("openReadme");
+        const span = document.querySelector(".close");
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
     <!-- 导航栏，点击可跳转到页面对应部分 -->
     <nav>
@@ -74,7 +132,7 @@
             ],
             movie: [
                 { name: '消失的她', rating: '★★★★☆', comment: '结局真的意想不到，吓鼠我了。', img: './images/ying_shi/xiao_shi_de_ta.png' },
-                { name: '你好，李焕英', rating: '★★★☆☆', comment: '个人觉得一般。就是最后的半个小时偷走了我的眼泪。', img: './images/ying_shi/ni_hao_li_huan_ying.jpg' }, 
+                { name: '你好，李焕英', rating: '★★★☆☆', comment: '个人觉得一般。就是最后的半个小时偷走了我的眼泪。', img: './images/ying_shi/ni_hao_li_huan_ying.jpg' },
                 { name: '孤注一掷', rating: '★★★★☆', comment: '阿才最后帮安娜逃走哪里真的很帅，诈骗片里搞纯爱。', img: './images/ying_shi/gu_zhu_yi_zhi.jpg' }
             ],
             show: [

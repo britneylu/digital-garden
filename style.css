@@ -39,26 +39,84 @@ header p {
 
 /* 语言切换按钮样式 */
 .lang-switch {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 1000;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 1000;
 }
 
 .lang-switch a {
-  background: rgba(100, 100, 100, 0.6);
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: background 0.2s;
+    background: rgba(100, 100, 100, 0.6);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s;
 }
 
 .lang-switch a:hover {
   background: rgba(0, 0, 0, 0.8);
 }
+
+/* Modal background */
+.modal {
+    display: none; /* 默认隐藏 */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.6);
+}
+
+/* Modal content box */
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 20px 30px;
+    border-radius: 12px;
+    width: 85%;
+    max-width: 700px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+}
+.close:hover {
+    color: black;
+}
+
+/* Info button in header */
+.info-btn {
+    margin-top: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(100, 100, 100, 0.6);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.info-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+
 
 /* 导航栏样式 */
 nav {
@@ -314,10 +372,18 @@ footer {
         font-size: 14px;
     }
 
+    /* 语言切换按钮 */
     .lang-switch a {
-        padding: 4px 8px;     /* 更小的内边距 */
-        font-size: 0.75rem;   /* 缩小字体 */
-        border-radius: 14px;  /* 圆角也缩小一点 */
+        padding: 4px 8px;
+        font-size: 0.75rem;
+        border-radius: 14px;
+    }
+
+    /* 关于本站按钮 */
+    .info-btn {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+        border-radius: 14px;
     }
 
     /* 导航保持一排 */

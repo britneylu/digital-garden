@@ -21,8 +21,70 @@
     <header>
         <h1>jiliguLU-ing</h1>
         <p>🌱 Welcome to my digital garden 👩🏻‍🌾<br>
-            Not a rigid archive, but a place where ideas take root and memories bloom—a collection of fleeting sparks and everyday fragments. </p>
+            Not a rigid archive, but a place where ideas take root and memories bloom—a collection of fleeting sparks
+            and everyday fragments. </p>
+        <!-- Info button -->
+        <button id="openReadme" class="info-btn">
+            <i class="fa-solid fa-circle-info"></i> About
+        </button>
     </header>
+
+    <!-- About This Site (info) -->
+    <div id="readmeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>🌱 My Digital Garden</h2>
+            <p>👉 Take a stroll online: <a href="https://britneylu.github.io/digital-garden/" target="_blank">Click
+                    here</a></p>
+
+            <p>Welcome to my <strong>little digital garden</strong> 👩🏻‍🌾
+                This isn’t some history textbook—just a place where I plant small fragments and pass sparks of
+                inspiration:</p>
+
+            <ul>
+                <li>🎬 Dramas, movies, and variety shows I’ve watched</li>
+                <li>📝 Quotes that hit me (bilingual—double the feels 💌)</li>
+                <li>🍜 Foods I can’t stop thinking about</li>
+                <li>🎶 Songs I have on endless loop</li>
+                <li>📸 A photo wall for moods and moments</li>
+            </ul>
+
+            <h3>🏗️ Project Snapshot</h3>
+            <p>This is a lightweight website built with <b>HTML + CSS + JS</b>:</p>
+            <ul>
+                <li>🛠️ <b>No frameworks</b>, built from scratch (okay, GPT gave me a little nudge)</li>
+                <li>⚡ <b>Simple and clean</b>, loads super fast</li>
+                <li>✨ <b>Updated whenever</b>—I write as inspiration comes</li>
+            </ul>
+
+            <p>Think of it like a small backyard: today I plant a tomato, tomorrow I'll scatter some flower seeds—slowly
+                growing, day by day 🌸</p>
+
+            <blockquote>
+                <b>Own lane, own race, own pace.</b><br>
+            </blockquote>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("readmeModal");
+        const btn = document.getElementById("openReadme");
+        const span = document.querySelector(".close");
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
     <!-- Navigation -->
     <nav>
@@ -223,69 +285,69 @@
     <script>
         const musicData = {
             rnb: [
-                { 
-                    name: '<a href="https://www.youtube.com/watch?v=OPN92RL6tBY" target="_blank"><i class="fa-solid fa-play"></i> Sink Into</a>', 
-                    singer: 'Juggshots', 
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=OPN92RL6tBY" target="_blank"><i class="fa-solid fa-play"></i> Sink Into</a>',
+                    singer: 'Juggshots',
                     genre: 'rnb/cpop'
                 },
-                { 
-                    name: '<a href="https://www.youtube.com/watch?v=O9T385SowTk" target="_blank"><i class="fa-solid fa-play"></i> 零距离的思念</a>', 
-                    singer: 'TINY7', 
-                    genre: 'rnb/cpop' 
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=O9T385SowTk" target="_blank"><i class="fa-solid fa-play"></i> 零距离的思念</a>',
+                    singer: 'TINY7',
+                    genre: 'rnb/cpop'
                 },
-                { 
-                    name: '<a href="https://www.youtube.com/watch?v=gZJbR0JL638&list=RDgZJbR0JL638&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> 放大</a>', 
-                    singer: 'Ziwei Xu', 
-                    genre: 'rnb/cpop' 
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=gZJbR0JL638&list=RDgZJbR0JL638&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> 放大</a>',
+                    singer: 'Ziwei Xu',
+                    genre: 'rnb/cpop'
                 },
-                { 
-                    name: '<a href="https://www.youtube.com/watch?v=vfyqAkT4uDU&list=RDvfyqAkT4uDU&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> LAST GOODBYE</a>', 
-                    singer: 'sunkis', 
-                    genre: 'rnb/pop' 
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=vfyqAkT4uDU&list=RDvfyqAkT4uDU&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> LAST GOODBYE</a>',
+                    singer: 'sunkis',
+                    genre: 'rnb/pop'
                 },
-                { 
-                    name: '<a href="https://www.youtube.com/watch?v=XhUXUYEwYf0&list=RDXhUXUYEwYf0&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> 漫步香港 1999</a>', 
-                    singer: 'Bruce Allen', 
-                    genre: 'rnb/cpop' 
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=XhUXUYEwYf0&list=RDXhUXUYEwYf0&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> 漫步香港 1999</a>',
+                    singer: 'Bruce Allen',
+                    genre: 'rnb/cpop'
                 }
             ],
             kpop: [
-                { 
-                    name: '<a href="https://youtube.com/playlist?list=PLxA687tYuMWh-Ib4NLklkOMy_2Ig-1XNY&si=BOIFx8wOnRHmnpFL" target="_blank"><i class="fa-solid fa-play"></i> rosie </a>', 
-                    singer: 'ROSÉ', 
-                    genre: 'kpop' 
+                {
+                    name: '<a href="https://youtube.com/playlist?list=PLxA687tYuMWh-Ib4NLklkOMy_2Ig-1XNY&si=BOIFx8wOnRHmnpFL" target="_blank"><i class="fa-solid fa-play"></i> rosie </a>',
+                    singer: 'ROSÉ',
+                    genre: 'kpop'
                 },
-                { 
-                    name: '<a href="https://www.youtube.com/watch?v=e2OpbOv_JiQ&list=RDe2OpbOv_JiQ&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> What You Want</a>', 
-                    singer: 'CORTIS', 
-                    genre: 'kpop' 
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=e2OpbOv_JiQ&list=RDe2OpbOv_JiQ&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> What You Want</a>',
+                    singer: 'CORTIS',
+                    genre: 'kpop'
                 },
-                { 
-                    name: '<a href="https://www.youtube.com/watch?v=JkEeQK3yNv8&list=RDJkEeQK3yNv8&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> PEACH GELATO</a>', 
-                    singer: 'TWICE', 
-                    genre: 'kpop' 
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=JkEeQK3yNv8&list=RDJkEeQK3yNv8&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> PEACH GELATO</a>',
+                    singer: 'TWICE',
+                    genre: 'kpop'
                 },
-                { 
-                    name: '<a href="https://www.youtube.com/watch?v=1P8BbTY8gWo" target="_blank"><i class="fa-solid fa-play"></i> MY WAY</a>', 
-                    singer: 'KATSEYE', 
-                    genre: 'kpop' 
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=1P8BbTY8gWo" target="_blank"><i class="fa-solid fa-play"></i> MY WAY</a>',
+                    singer: 'KATSEYE',
+                    genre: 'kpop'
                 }
             ],
             cpop: [
-                { 
-                    name: '<a href="https://www.youtube.com/watch?v=Rk4CsJ9X_tU&list=RDRk4CsJ9X_tU&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> 你最近还好吗</a>', 
-                    singer: 'Lil Ghost', 
-                    genre: 'cpop/rap' 
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=Rk4CsJ9X_tU&list=RDRk4CsJ9X_tU&start_radio=1" target="_blank"><i class="fa-solid fa-play"></i> 你最近还好吗</a>',
+                    singer: 'Lil Ghost',
+                    genre: 'cpop/rap'
                 },
-                { 
-                    name: '<a href="https://www.youtube.com/watch?v=i7c9YeHj-Ys" target="_blank"><i class="fa-solid fa-play"></i> 小宇</a>', 
-                    singer: 'Lan Xinyu (cover)', 
-                    genre: 'cpop' 
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=i7c9YeHj-Ys" target="_blank"><i class="fa-solid fa-play"></i> 小宇</a>',
+                    singer: 'Lan Xinyu (cover)',
+                    genre: 'cpop'
                 },
-                { 
-                    name: '<a href="https://www.youtube.com/watch?v=sMWRdxF05-8" target="_blank"><i class="fa-solid fa-play"></i> 茫</a>', 
-                    singer: 'Runqi Li', 
-                    genre: 'cpop' 
+                {
+                    name: '<a href="https://www.youtube.com/watch?v=sMWRdxF05-8" target="_blank"><i class="fa-solid fa-play"></i> 茫</a>',
+                    singer: 'Runqi Li',
+                    genre: 'cpop'
                 },
                 {
                     name: '<a href="https://www.youtube.com/watch?v=s_V3pM6l8vQ" target="_blank"><i class="fa-solid fa-play"></i> 我曾遇到一束光</a>',
@@ -370,7 +432,8 @@
                     <p>Blackpink Concert <i class="fa-solid fa-expand"></i></p>
                 </summary>
                 <div class="photo-detail">
-                    <p>The opening stage—I was so hyped. If you look closer at audience, it's kinda funny how everyone's got their arms up.</p>
+                    <p>The opening stage—I was so hyped. If you look closer at audience, it's kinda funny how everyone's
+                        got their arms up.</p>
                     <p>Date: 7-26-2025</p>
                 </div>
             </details>
