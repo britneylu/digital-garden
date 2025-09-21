@@ -87,6 +87,15 @@ header p {
     position: relative;
 }
 
+blockquote {
+    margin: 20px auto;
+    padding: 12px 20px;
+    border-left: 4px solid #5986d8; /* 左边一条竖线 */
+    background: #f9f9f9;
+    font-style: italic;
+    color: #444;
+}
+
 /* Close button */
 .close {
     position: absolute;
