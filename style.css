@@ -560,7 +560,7 @@ footer {
 }
 
 /* ================== ipad端适配portrait/vertical ================== */
-@media only screen and (min-width: 601px) and (max-width: 1200px) {
+@media only screen and (min-width: 601px) and (max-width: 1350px) {
 
     /* 样式 */
     body {
@@ -594,16 +594,38 @@ footer {
         transition: background-color 0.3s;
     }
 
+    .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
     /* 影视 */
     #movies .card-container {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        justify-content: center;
+        justify-content: flex-start /* 左对齐 */;
     }
 
+    /* 影视返回按钮样式 */
     .back-btn {
-    margin-left: 110px;
+        width: 230px;
+        height: 50px;
+        cursor: pointer;
+        background-color: #5986d8;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        margin-bottom: 20px;
+
+        /* 关键：让文字居中 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     /* 美食卡片容器 */
@@ -611,7 +633,7 @@ footer {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     /* 音乐 */
@@ -619,7 +641,7 @@ footer {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .photo-card summary::-webkit-details-marker {
