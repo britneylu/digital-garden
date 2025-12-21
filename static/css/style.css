@@ -1,12 +1,11 @@
-/* ---------------- 通用样式 ---------------- */
 body {
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Poppins';
     margin: 0;
     padding: 0;
-    background-color: #e8e8e8;
-    color: #333;
+    background-color: #f4f6fb;
+    color: #2f2f3a;
 
-    zoom: 0.85; /* 全局缩小15% */
+    zoom: 0.85;
 }
 
 h1,
@@ -14,7 +13,6 @@ h2,
 h3 {
     font-family: 'Poppins', Arial, sans-serif;
     font-weight: 600;
-    /* 标题加粗 */
 }
 
 /* 页眉样式 */
@@ -22,7 +20,7 @@ header {
     background-color: #5986d8;
     padding: 20px;
     text-align: center;
-    color: white;
+    color: #f8f9ff;
 }
 
 header h1 {
@@ -33,7 +31,7 @@ header h1 {
 header p {
     font-size: 18px;
     line-height: 1.6;
-    color: #f0f0f0; /* 白色或浅色，和背景对比 */
+    color: #f0f0f0;
     margin: 0;
 }
 
@@ -46,7 +44,7 @@ header p {
 }
 
 .lang-switch a {
-    background: rgba(100, 100, 100, 0.6);
+    background: rgba(255, 255, 255, 0.25);
     color: #fff;
     padding: 6px 12px;
     border-radius: 20px;
@@ -57,12 +55,12 @@ header p {
 }
 
 .lang-switch a:hover {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(255, 255, 255, 0.4);
 }
 
 /* Modal background */
 .modal {
-    display: none; /* 默认隐藏 */
+    display: none;
     position: fixed;
     z-index: 2000;
     left: 0;
@@ -110,31 +108,31 @@ blockquote {
     color: black;
 }
 
-/* Info button in header */
+/* info button in header */
 .info-btn {
     margin-top: 10px;
     padding: 6px 12px;
     border: none;
     border-radius: 20px;
-    background: rgba(100, 100, 100, 0.6);
+    background: rgba(255, 255, 255, 0.25);
     color: #fff;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.2s;
 }
 .info-btn:hover {
-    background: rgba(0,0,0,0.8);
+    background: rgba(255, 255, 255, 0.4);
 }
 
 
 /* 导航栏样式 */
 nav {
-    background-color: #3e3e3e;
+    background-color: #333333;
 }
 
 /* 导航链接样式 */
 nav a {
-    color: white;
+    color: #f4f6fb;
     font-size: 20px;
     text-decoration: none;
     padding: 12px 20px;
@@ -330,7 +328,7 @@ h2 {
 }
 
 .photo-card {
-    width: 290px;
+    width: 235px;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);

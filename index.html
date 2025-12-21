@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>叽里咕卢ing</title>
     <!-- 引入外部 CSS 文件 -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./static/css/style.css">
     <!-- 引入 Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -22,7 +22,7 @@
     <!-- 网站头部 -->
     <header>
         <h1>小卢的叽里咕卢</h1>
-        <p>🌱 欢迎来到我的 数字小花园 👩🏻‍🌾<br>
+        <p>🌱 欢迎来到我的 数字小花园<br>
             这里不是高冷的知识库，而是我随手种下的碎片和灵感：<br> 记录生活的点点滴滴</p>
 
         <!-- Info button -->
@@ -36,25 +36,25 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>🌱 My Digital Garden（数字花园）</h2>
-            <p>👉 在线逛逛：<a href="https://britneylu.github.io/digital-garden/" target="_blank">点击这里</a></p>
+            <p>在线逛逛：<a href="https://britneylu.github.io/digital-garden/" target="_blank">点击这里</a></p>
 
-            <p>欢迎来到我的 <strong>数字小花园</strong> 👩🏻‍🌾
+            <p>欢迎来到我的 <strong>数字小花园</strong>
                 这里不是高冷的知识库，而是我随手种下的碎片和灵感：</p>
 
             <ul>
-                <li>🎬 我追过的 <b>电视剧 / 电影 / 综艺</b></li>
-                <li>📝 触动我的 <b>文案句子</b>（中英文对照，双倍感动 💌）</li>
-                <li>🍜 让我念念不忘的 <b>美食</b></li>
-                <li>🎵 无限循环的 <b>音乐</b></li>
-                <li>📸 记录心情的 <b>照片墙</b></li>
+                <li>我追过的 <b>电视剧 / 电影 / 综艺</b></li>
+                <li>触动我的 <b>文案句子</b>（中英文对照，双倍感动）</li>
+                <li>让我念念不忘的 <b>美食</b></li>
+                <li>无限循环的 <b>音乐</b></li>
+                <li>记录心情的 <b>照片墙</b></li>
             </ul>
 
-            <h3>🏗️ 项目简介</h3>
+            <h3>项目简介</h3>
             <p>这是一个轻量级的网页项目，用 <b>HTML + CSS + JS</b> 完成：</p>
             <ul>
-                <li>🛠️ <b>零框架</b>，纯手工搭建（好吧GPT老师确实帮了一点忙）</li>
-                <li>⚡ <b>简洁清爽</b>，加载飞快</li>
-                <li>✨ <b>随缘更新</b>，想到什么写什么</li>
+                <li><b>零框架</b>，纯手工搭建（好吧GPT老师确实帮了一点忙）</li>
+                <li><b>简洁清爽</b>，加载飞快</li>
+                <li><b>随缘更新</b>，想到什么写什么</li>
             </ul>
 
             <p>就像一块小院子：今天种点番茄，明天撒些花籽，慢慢生长。</p>
@@ -96,7 +96,7 @@
 
     <!-- 影视模块 -->
     <section id="movies">
-        <h2>🎬 影视记录</h2>
+        <h2>影视记录</h2>
 
         <!-- 类型选择卡（电影 / 电视剧 / 综艺） -->
         <div id="movie-types" class="card-container">
@@ -122,25 +122,25 @@
         // 每个类型的影视作品数据
         const movieData = {
             tv: [
-                { name: '爱你', rating: '★★★★★', comment: '我的人生剧！非常治愈的一部。颜值就不用我多说了吧，好看的人在一起cp感绝对upup。推荐大家都去看。', img: './images/ying_shi/ai_ni_img.png' },
-                { name: 'The Residence', rating: '★★★★☆', comment: '剧情十分紧凑环环紧扣但超搞笑的。你绝对猜不到结局。', img: './images/ying_shi/the_residence.jpeg' },
-                { name: '苦尽甘来遇见你', rating: '★★★★★', comment: '不是很喜欢年代剧但是这部真的很精彩很真实，演员演技在线。每一集我的眼睛就跟开了水龙头一样。', img: './images/ying_shi/when_life_gives_you_tangerines.png' },
-                { name: '难哄', rating: '★★★☆☆', comment: '只能说如果不是冲着白敬亭和章若楠，我早就弃剧了。剧情实在是有点拉垮，男女主都不长嘴。', img: './images/ying_shi/nan_hong.png' },
-                { name: 'The White Lotus', rating: '★★★★☆', comment: '挺好看的就是ummm尺度有点大。每一季的片头都很魔性哈。超喜欢Tanya这个角色，傻傻的富婆。', img: './images/ying_shi/the_white_lotus.jpg' },
-                { name: '九重紫', rating: '★★★★★', comment: '还得是将军。豹豹猫猫99！', img: './images/ying_shi/jiu_chon_zi.jpeg' },
-                { name: '锦月如歌', rating: '★★★★★', comment: '我喜欢月亮，月亮不知道。', img: './images/ying_shi/jin_yue_ru_ge.png' },
-                { name: '许我耀眼', rating: '★★★★☆', comment: '好看好看！但前半部分比后半好看多了。许妍和姥姥的剧情每次都会让我爆哭555。', img: './images/ying_shi/xu_wo_yao_yan.jpg' }
+                { name: '爱你', rating: '★★★★★', comment: '我的人生剧！非常治愈的一部。颜值就不用我多说了吧，好看的人在一起cp感绝对upup。推荐大家都去看。', img: './static/images/ying_shi/ai_ni_img.png' },
+                { name: 'The Residence', rating: '★★★★☆', comment: '剧情十分紧凑环环紧扣但超搞笑的。你绝对猜不到结局。', img: './static/images/ying_shi/the_residence.jpeg' },
+                { name: '苦尽甘来遇见你', rating: '★★★★★', comment: '不是很喜欢年代剧但是这部真的很精彩很真实，演员演技在线。每一集我的眼睛就跟开了水龙头一样。', img: './static/images/ying_shi/when_life_gives_you_tangerines.png' },
+                { name: '难哄', rating: '★★★☆☆', comment: '只能说如果不是冲着白敬亭和章若楠，我早就弃剧了。剧情实在是有点拉垮，男女主都不长嘴。', img: './static/images/ying_shi/nan_hong.png' },
+                { name: 'The White Lotus', rating: '★★★★☆', comment: '挺好看的就是ummm尺度有点大。每一季的片头都很魔性哈。超喜欢Tanya这个角色，傻傻的富婆。', img: './static/images/ying_shi/the_white_lotus.jpg' },
+                { name: '九重紫', rating: '★★★★★', comment: '还得是将军。豹豹猫猫99！', img: './static/images/ying_shi/jiu_chon_zi.jpeg' },
+                { name: '锦月如歌', rating: '★★★★★', comment: '我喜欢月亮，月亮不知道。', img: './static/images/ying_shi/jin_yue_ru_ge.png' },
+                { name: '许我耀眼', rating: '★★★★☆', comment: '好看好看！但前半部分比后半好看多了。许妍和姥姥的剧情每次都会让我爆哭555。', img: './static/images/ying_shi/xu_wo_yao_yan.jpg' }
             ],
             movie: [
-                { name: '消失的她', rating: '★★★★☆', comment: '结局真的意想不到，吓鼠我了。', img: './images/ying_shi/xiao_shi_de_ta.png' },
-                { name: '你好，李焕英', rating: '★★★☆☆', comment: '个人觉得一般。就是最后的半个小时偷走了我的眼泪。', img: './images/ying_shi/ni_hao_li_huan_ying.jpg' },
-                { name: '孤注一掷', rating: '★★★★☆', comment: '阿才最后帮安娜逃走哪里真的很帅，诈骗片里搞纯爱。', img: './images/ying_shi/gu_zhu_yi_zhi.jpg' }
+                { name: '消失的她', rating: '★★★★☆', comment: '结局真的意想不到，吓鼠我了。', img: './static/images/ying_shi/xiao_shi_de_ta.png' },
+                { name: '你好，李焕英', rating: '★★★☆☆', comment: '个人觉得一般。就是最后的半个小时偷走了我的眼泪。', img: './static/images/ying_shi/ni_hao_li_huan_ying.jpg' },
+                { name: '孤注一掷', rating: '★★★★☆', comment: '阿才最后帮安娜逃走哪里真的很帅，诈骗片里搞纯爱。', img: './static/images/ying_shi/gu_zhu_yi_zhi.jpg' }
             ],
             show: [
-                { name: '花儿与少年·丝路季', rating: '★★★★★', comment: '这就是群像的魅力！', img: './images/ying_shi/hua_shao_img.jpg' },
-                { name: '女子推理社', rating: '★★★★★', comment: '每个案例都是生活中真实存在的。每期都能体现出女性的力量。', img: './images/ying_shi/nv_zhi_tui_li_she.png' },
-                { name: '心动的信号', rating: '★★★★☆', comment: '一季不落的恋综，节目组老爱剪三角恋。但最近磕上了乐远cp。我的cp必须是真的！', img: './images/ying_shi/xin_dong_de_xin_hao.png' },
-                { name: 'Biong Biong地球游戏厅', rating: '★★★★★', comment: '这是我看过最好看的韩综！每期我都像个傻子一样爆笑。每次到随舞环节我都震撼，怎么能这么齐，四个人都是使不完的牛劲。', img: './images/ying_shi/biong_biong.png' }
+                { name: '花儿与少年·丝路季', rating: '★★★★★', comment: '这就是群像的魅力！', img: './static/images/ying_shi/hua_shao_img.jpg' },
+                { name: '女子推理社', rating: '★★★★★', comment: '每个案例都是生活中真实存在的。每期都能体现出女性的力量。', img: './static/images/ying_shi/nv_zhi_tui_li_she.png' },
+                { name: '心动的信号', rating: '★★★★☆', comment: '一季不落的恋综，节目组老爱剪三角恋。但最近磕上了乐远cp。我的cp必须是真的！', img: './static/images/ying_shi/xin_dong_de_xin_hao.png' },
+                { name: 'Biong Biong地球游戏厅', rating: '★★★★★', comment: '这是我看过最好看的韩综！每期我都像个傻子一样爆笑。每次到随舞环节我都震撼，怎么能这么齐，四个人都是使不完的牛劲。', img: './static/images/ying_shi/biong_biong.png' }
             ]
         };
 
@@ -187,7 +187,7 @@
 
     <!-- 文案收藏模块 -->
     <section id="quotes">
-        <h2>📝 文案收藏</h2>
+        <h2>文案收藏</h2>
         <div class="quote-container">
             <div class="quote-card">
                 <p class="chinese">不要因为别人交卷了，就乱写答案。</p>
@@ -196,10 +196,6 @@
             <div class="quote-card">
                 <p class="chinese">如果你太留恋过去的自己，将永远无法成为你想成为的人。</p>
                 <p class="english">If you dwell too much on your past self, you'll never become who you want to be.</p>
-            </div>
-            <div class="quote-card">
-                <p class="chinese">无需比较，我独我。</p>
-                <p class="english">No need to compare; I am uniquely myself.</p>
             </div>
             <div class="quote-card">
                 <p class="chinese">车到山头必有路，船到桥头自然直。</p>
@@ -234,7 +230,7 @@
 
     <!-- 美食模块 -->
     <section id="food">
-        <h2>🍜 美食清单</h2>
+        <h2>美食清单</h2>
         <div class="card-container">
             <div class="card">
                 <h3><a href="https://maps.app.goo.gl/rnVCYeFLPnk68pjcA" target="_blank">厨尚麻辣 <i
@@ -283,7 +279,7 @@
 
     <!-- 音乐模块 -->
     <section id="music">
-        <h2>🎵 音乐收藏（无限循环的那种）</h2>
+        <h2>音乐收藏（无限循环的那种）</h2>
 
         <!-- 音乐类型选择 -->
         <div id="music-types" class="card-container">
@@ -443,11 +439,11 @@
 
     <!-- 照片墙模块 -->
     <section id="photo-wall">
-        <h2>📸 照片墙</h2>
+        <h2>照片墙</h2>
         <div class="photo-container">
             <details class="photo-card">
                 <summary>
-                    <img src="images/photo_wall/hs_grad.png" alt="高中毕业典礼">
+                    <img src="static/images/photo_wall/hs_grad.png" alt="高中毕业典礼">
                     <p>高中毕业典礼 <i class="fa-solid fa-expand"></i></p>
                 </summary>
                 <div class="photo-detail">
@@ -458,7 +454,7 @@
 
             <details class="photo-card">
                 <summary>
-                    <img src="images/photo_wall/santa_monica.jpg" alt="Santa Monica海边">
+                    <img src="static/images/photo_wall/santa_monica.jpg" alt="Santa Monica海边">
                     <p>Santa Monica, CA <i class="fa-solid fa-expand"></i></p>
                 </summary>
                 <div class="photo-detail">
@@ -469,7 +465,7 @@
 
             <details class="photo-card">
                 <summary>
-                    <img src="images/photo_wall/vanderbilt.jpg" alt="长岛">
+                    <img src="static/images/photo_wall/vanderbilt.jpg" alt="长岛">
                     <p>Vanderbilt Beach <i class="fa-solid fa-expand"></i></p>
                 </summary>
                 <div class="photo-detail">
@@ -480,7 +476,7 @@
 
             <details class="photo-card">
                 <summary>
-                    <img src="images/photo_wall/blackpink.png" alt="粉墨演唱会">
+                    <img src="static/images/photo_wall/blackpink.png" alt="粉墨演唱会">
                     <p>Blackpink演唱会 <i class="fa-solid fa-expand"></i></p>
                 </summary>
                 <div class="photo-detail">
