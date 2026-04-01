@@ -189,7 +189,63 @@
     <!-- 文案库模块 -->
     <section id="quotes">
         <h2>文案库</h2>
-        <div class="quote-container">
+
+        <!-- 随机文案 -->
+        <div id="random-quote-box" style="
+            background: #fff;
+            border: 1.5px solid #e4e0d8;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 12px rgba(74,123,212,0.10);
+            /* max-width: 480px; */
+            max-width: 100%;
+            position: relative;
+            overflow: hidden;
+        ">
+            <div style="
+                position:absolute; top:-8px; left:10px;
+                font-size:72px; color:#e8eef9;
+                font-family:Georgia,serif; line-height:1;
+                pointer-events:none;
+            ">"</div>
+            <p id="rq-chinese" style="font-size:18px;font-weight:600;margin:0 0 10px;color:#2a2a35;position:relative;"></p>
+            <p id="rq-english" style="font-style:italic;color:#6b6b7e;font-size:15px;margin:0;position:relative;"></p>
+            <button onclick="showRandomQuote()" style="
+                margin-top: 16px;
+                padding: 7px 18px;
+                background: #4a7bd4;
+                color: #fff;
+                border: none;
+                border-radius: 20px;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background 0.2s;
+                position: relative;
+            " onmouseover="this.style.background='#6b95db'"
+               onmouseout="this.style.background='#4a7bd4'">
+                🔀 再来一条
+            </button>
+        </div>
+
+        <button onclick="toggleQuotes(this)" style="
+            padding: 7px 18px;
+            background: #fff;
+            color: #4a7bd4;
+            border: 1.5px solid #4a7bd4;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 16px;
+            transition: all 0.2s;
+        " onmouseover="this.style.background='#e8eef9'"
+        onmouseout="this.style.background='#fff'">
+            展开全部 <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="quote-container" id="all-quotes" style="display:none;">
             <div class="quote-card">
                 <p class="chinese">不要因为别人交卷了，就乱写答案。</p>
                 <p class="english">Move at your own pace, on your own path. Your lane, your race, your pace.</p>
@@ -232,10 +288,73 @@
             </div>
     </section>
 
+    <script>
+        function toggleQuotes(btn) {
+            const box = document.getElementById('all-quotes');
+            const isHidden = box.style.display === 'none';
+            box.style.display = isHidden ? 'flex' : 'none';
+            btn.innerHTML = isHidden 
+                ? '收起 <i class="fa-solid fa-chevron-up"></i>' 
+                : '展开全部 <i class="fa-solid fa-chevron-down"></i>';
+        }
+    </script>
+
+    <script>
+        const allQuotes = [
+            { zh: '不要因为别人交卷了，就乱写答案。', en: 'Move at your own pace, on your own path. Your lane, your race, your pace.' },
+            { zh: '分享，是把多余的给出去，而不是把必需的交出去。', en: 'Sharing is giving what you have extra, not what you need.' },
+            { zh: '车到山头必有路，船到桥头自然直。', en: "Where there's a will, there's a way." },
+            { zh: '懂事的孩子没糖吃，懂事只换来被忽视。', en: 'The ones who understand ask for less—and receive even less.' },
+            { zh: '好事总发生在下一个转弯。', en: 'The best surprises always happen at the next turn.' },
+            { zh: '顺其自然，不必刻意迎合，只求顺从内心。', en: 'Flow with life, not approval.' },
+            { zh: '心要像门一样，开合有度 进退自如。', en: 'Hold your heart like a door—open, close, and move with ease, as life calls for it.' },
+            { zh: '人生注定不圆满，遗憾才是常态。', en: "Life is destined to be imperfect; regrets are its constant companion." },
+            { zh: '成年人的世界，只筛选，不教育；只选择，不改变。', en: "As adults, we don't change people—we choose who to keep around." },
+            { zh: '没有正确的选择，要让选择变正确。', en: "There's no perfect choice—you make your choice right." }
+        ];
+ 
+        let lastIndex = -1;
+        function showRandomQuote() {
+            let idx;
+            do { idx = Math.floor(Math.random() * allQuotes.length); } while (idx === lastIndex);
+            lastIndex = idx;
+            const q = allQuotes[idx];
+            const zh = document.getElementById('rq-chinese');
+            const en = document.getElementById('rq-english');
+            zh.style.opacity = 0; en.style.opacity = 0;
+            setTimeout(() => {
+                zh.textContent = q.zh;
+                en.textContent = q.en;
+                zh.style.transition = en.style.transition = 'opacity 0.3s';
+                zh.style.opacity = 1; en.style.opacity = 1;
+            }, 150);
+        }
+        showRandomQuote(); // show one on load
+    </script>
 
     <!-- 美食模块 -->
     <section id="food">
         <h2>美食笔记</h2>
+
+        <a href="https://beliapp.co/app/britneyluuu" target="_blank" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 16px;
+            background: #fff;
+            color: #4a7bd4;
+            border: 1.5px solid #4a7bd4;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 16px;
+            transition: background 0.2s;
+        " onmouseover="this.style.background='#e8eef9'"
+        onmouseout="this.style.background='#fff'">
+            🍴 我的 Beli 主页
+        </a>
+
         <div class="card-container">
             <div class="card">
                 <h3><a href="https://maps.app.goo.gl/rnVCYeFLPnk68pjcA" target="_blank">厨尚麻辣 <i
@@ -298,13 +417,13 @@
             </div>
         </div>
 
-        <!-- 动态显示影视作品卡片 -->
+        <!-- 动态显示音乐卡片 -->
         <div id="music-content" class="card-container" style="display:none;">
             <!-- JS 会生成对应作品卡片 -->
         </div>
     </section>
 
-    <!-- 影视模块的 JS 动态内容 -->
+    <!-- 音乐模块的 JS 动态内容 -->
     <script>
         // 每个类型的音乐数据
         const musicData = {
@@ -451,7 +570,7 @@
             <details class="photo-card">
                 <summary>
                     <img src="static/images/photo_wall/hs_grad.png" alt="高中毕业典礼">
-                    <p>高中毕业典礼 <i class="fa-solid fa-expand"></i></p>
+                    <p>高中毕业典礼 <i class="fa-solid fa-chevron-down"></i></p>
                 </summary>
                 <div class="photo-detail">
                     <p>摄影师的角度是有点雷，但还是挺好看的。当时穿着高跟鞋脑子里想的全是 “别摔别摔，学士帽别掉” 根本没意识到有镜头。</p>
@@ -462,7 +581,7 @@
             <details class="photo-card">
                 <summary>
                     <img src="static/images/photo_wall/santa_monica.jpg" alt="Santa Monica海边">
-                    <p>Santa Monica, CA <i class="fa-solid fa-expand"></i></p>
+                    <p>Santa Monica, CA <i class="fa-solid fa-chevron-down"></i></p>
                 </summary>
                 <div class="photo-detail">
                     <p>加州的海真的很治愈。按下快门的瞬间海鸥photobomb。</p>
@@ -473,7 +592,7 @@
             <details class="photo-card">
                 <summary>
                     <img src="static/images/photo_wall/vanderbilt.jpg" alt="长岛">
-                    <p>Vanderbilt Beach <i class="fa-solid fa-expand"></i></p>
+                    <p>Vanderbilt Beach <i class="fa-solid fa-chevron-down"></i></p>
                 </summary>
                 <div class="photo-detail">
                     <p>这张照片是在纽约长岛的时候拍的，海风很舒服。</p>
@@ -484,7 +603,7 @@
             <details class="photo-card">
                 <summary>
                     <img src="static/images/photo_wall/blackpink.png" alt="粉墨演唱会">
-                    <p>Blackpink演唱会 <i class="fa-solid fa-expand"></i></p>
+                    <p>Blackpink演唱会 <i class="fa-solid fa-chevron-down"></i></p>
                 </summary>
                 <div class="photo-detail">
                     <p>演唱会的开场，太激动了。密密麻麻的观众还有点搞笑是怎么回事，每个人都高高的举起手机</p>
@@ -495,7 +614,7 @@
             <details class="photo-card">
                 <summary>
                     <img src="static/images/photo_wall/quebec.png" alt="魁北克鬼怪红门">
-                    <p>Québec City, CA <i class="fa-solid fa-expand"></i></p>
+                    <p>Québec City, CA <i class="fa-solid fa-chevron-down"></i></p>
                 </summary>
                 <div class="photo-detail">
                     <p>打卡鬼怪里的红门。</p>
@@ -507,7 +626,7 @@
 
     <!-- 页脚 -->
     <footer>
-        &copy; 2026 小卢的个人网站
+        &copy; <script>document.write(new Date().getFullYear())</script> 小卢的个人网站
     </footer>
 
 </body>

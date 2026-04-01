@@ -1,41 +1,95 @@
-body {
-    font-family: 'Poppins';
-    margin: 0;
-    padding: 0;
-    background-color: #f4f6fb;
-    color: #2f2f3a;
+/* =============================================
+   小卢的叽里咕卢
+   Aesthetic: soft editorial / warm personal journal
+   ============================================= */
 
-    zoom: 0.85;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Serif+SC:wght@400;600&display=swap');
+
+/* ---- CSS Variables ---- */
+:root {
+    --blue:        #4a7bd4;
+    --blue-light:  #6b95db;
+    --blue-soft:   #e8eef9;
+    --bg:          #f7f5f2;
+    --surface:     #ffffff;
+    --text:        #2a2a35;
+    --text-muted:  #6b6b7e;
+    --border:      #e4e0d8;
+    --accent:      #e8a87c;
+    --radius:      12px;
+    --shadow:      0 2px 12px rgba(74, 123, 212, 0.10);
+    --shadow-hover:0 6px 24px rgba(74, 123, 212, 0.18);
+    --transition:  0.22s ease;
 }
 
-h1,
-h2,
-h3 {
-    font-family: 'Poppins', Arial, sans-serif;
+html {
+    scroll-behavior: smooth;
+}
+
+/* ---- RESET & BASE ---- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', 'Noto Serif SC', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    zoom: 0.9;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', 'Noto Serif SC', sans-serif;
     font-weight: 600;
 }
 
-/* 页眉样式 */
+/* ---- HEADER ---- */
 header {
-    background-color: #5986d8;
-    padding: 20px;
+    background: linear-gradient(135deg, #4a7bd4 0%, #6b95db 60%, #8db3e8 100%);
+    padding: 36px 24px 28px;
     text-align: center;
-    color: #f8f9ff;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* subtle decorative circles in header */
+header::before,
+header::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.12;
+    pointer-events: none;
+}
+header::before {
+    width: 280px; height: 280px;
+    background: #fff;
+    top: -100px; left: -60px;
+}
+header::after {
+    width: 200px; height: 200px;
+    background: #fff;
+    bottom: -80px; right: -40px;
 }
 
 header h1 {
-    font-size: 30px;
-    margin-bottom: 10px;
+    font-size: 32px;
+    margin: 0 0 10px;
+    letter-spacing: 0.02em;
 }
 
 header p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #f0f0f0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.9);
     margin: 0;
+    max-width: 520px;
+    margin-inline: auto;
 }
 
-/* 语言切换按钮样式 */
+/* ---- LANG SWITCH ---- */
 .lang-switch {
     position: absolute;
     top: 16px;
@@ -44,641 +98,480 @@ header p {
 }
 
 .lang-switch a {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255,255,255,0.22);
     color: #fff;
-    padding: 6px 12px;
+    padding: 6px 14px;
     border-radius: 20px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
-    transition: background 0.2s;
+    font-size: 0.85rem;
+    transition: background var(--transition);
+    border: 1px solid rgba(255,255,255,0.3);
 }
+.lang-switch a:hover { background: rgba(255,255,255,0.38); }
 
-.lang-switch a:hover {
-  background: rgba(255, 255, 255, 0.4);
+/* ---- INFO BUTTON ---- */
+.info-btn {
+    margin-top: 14px;
+    padding: 7px 16px;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 20px;
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: background var(--transition);
 }
+.info-btn:hover { background: rgba(255,255,255,0.32); }
 
-/* Modal background */
+/* ---- MODAL ---- */
 .modal {
     display: none;
     position: fixed;
     z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
     overflow: auto;
-    background: rgba(0,0,0,0.6);
+    background: rgba(30, 30, 50, 0.55);
+    backdrop-filter: blur(4px);
 }
 
-/* Modal content box */
 .modal-content {
-    background: #fff;
-    margin: 10% auto;
-    padding: 20px 30px;
-    border-radius: 12px;
-    width: 85%;
-    max-width: 700px;
+    background: var(--surface);
+    margin: 8% auto;
+    padding: 28px 36px;
+    border-radius: 16px;
+    width: 88%;
+    max-width: 680px;
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    line-height: 1.7;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.22);
     position: relative;
+    animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 blockquote {
-    margin: 20px auto;
+    margin: 20px 0;
     padding: 12px 20px;
-    border-left: 4px solid #5986d8; /* 左边一条竖线 */
-    background: #f9f9f9;
+    border-left: 4px solid var(--blue);
+    background: var(--blue-soft);
     font-style: italic;
     color: #444;
+    border-radius: 0 8px 8px 0;
 }
 
-/* Close button */
 .close {
     position: absolute;
-    top: 12px;
-    right: 16px;
-    font-size: 1.5rem;
+    top: 14px; right: 18px;
+    font-size: 1.4rem;
     font-weight: bold;
-    color: #555;
+    color: var(--text-muted);
     cursor: pointer;
+    transition: color var(--transition);
 }
-.close:hover {
-    color: black;
-}
+.close:hover { color: var(--text); }
 
-/* info button in header */
-.info-btn {
-    margin-top: 10px;
-    padding: 6px 12px;
-    border: none;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.25);
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-.info-btn:hover {
-    background: rgba(255, 255, 255, 0.4);
-}
-
-
-/* 导航栏样式 */
+/* ---- NAV ---- */
 nav {
-    background-color: #333;
+    background-color: #2a2a35;
+    display: flex;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
-/* 导航链接样式 */
 nav a {
-    color: #f4f6fb;
-    font-size: 20px;
+    color: rgba(255,255,255,0.82);
+    font-size: 15px;
+    font-weight: 500;
     text-decoration: none;
-    padding: 12px 20px;
+    padding: 13px 20px;
     display: inline-block;
-    transition: background-color 0.3s;
+    transition: background-color var(--transition), color var(--transition);
+    letter-spacing: 0.01em;
 }
 
 nav a:hover {
-    background-color: #555;
+    background-color: rgba(255,255,255,0.10);
+    color: #fff;
 }
 
-/* ---------------- 影视类型卡样式 ---------------- */
-.type-card {
-    background-color: white;
-    padding: 20px;
-    width: 150px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: transform 0.2s;
-    margin: 10px;
-}
-
-.card img {
-    width: 100%;
-    height: 50%;
-    height: 200px;
-    object-fit: cover; 
-    border-radius: 4px;
-}
-
-.card h3 { 
-    margin: 8px 0 4px 0;
-}
-
-.card p {
-    margin: 3px 0;
-}
-
-.type-card:hover {
-    transform: scale(1.05);
-}
-
-/* 影视返回按钮样式 */
-.back-btn {
-    width: 230px;
-    height: 50px;
-    cursor: pointer;
-    background-color: #5986d8;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s;
-    margin-bottom: 20px;
-
-    /* 关键：让文字居中 */
-    display: flex;
-    align-items: center; /* 垂直居中 */
-    justify-content: center; /* 水平居中 */
-}
-
-.back-btn:hover {
-    background-color: #7395d4;
-}
-
-/* ---------------- 页面内容区 ---------------- */
+/* ---- SECTIONS ---- */
 section {
-    padding: 20px;
-    max-width: 1000px;
-    margin: auto;
+    padding: 32px 24px;
+    max-width: 1040px;
+    margin: 0 auto;
 }
 
 h2 {
-    border-bottom: 2px solid #5986d8;
-    padding-bottom: 5px;
+    font-size: 22px;
+    border-bottom: 2px solid var(--blue-soft);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    color: var(--text);
+    position: relative;
+}
+h2::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2px; left: 0;
+    width: 48px; height: 2px;
+    background: var(--blue);
+    border-radius: 2px;
 }
 
-/* ---------------- 卡片容器 ---------------- */
+/* ---- TYPE CARDS (movies / music categories) ---- */
+.type-card {
+    background: var(--surface);
+    padding: 22px 18px;
+    width: 150px;
+    text-align: center;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+    margin: 8px;
+    border: 1.5px solid var(--border);
+}
+
+.type-card:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: var(--shadow-hover);
+    background: var(--blue-soft);
+    border-color: var(--blue-light);
+}
+
+.type-card h3 {
+    margin: 0;
+    font-size: 17px;
+    color: var(--blue);
+}
+
+/* ---- BACK BUTTON ---- */
+.back-btn {
+    width: 200px;
+    height: 44px;
+    cursor: pointer;
+    background-color: var(--blue);
+    border: none;
+    color: white;
+    border-radius: var(--radius);
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color var(--transition), transform var(--transition);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.back-btn:hover {
+    background-color: var(--blue-light);
+    transform: translateX(-3px);
+}
+
+/* ---- CARD CONTAINER ---- */
 .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 15px;
+    gap: 16px;
 }
 
-/* ---------------- 卡片样式 ---------------- */
+/* ---- CARDS (movies, food, music) ---- */
 .card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    width: 200px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 16px;
+    width: 235px;
+    border: 1.5px solid var(--border);
+    transition: transform var(--transition), box-shadow var(--transition);
 }
 
-/* 卡片内图片样式 */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
 .card img {
     width: 100%;
-    border-radius: 4px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
 }
 
-/* ---------------- 文案样式 ---------------- */
+.card h3 {
+    margin: 6px 0 4px;
+    font-size: 15px;
+    color: var(--text);
+}
+
+.card p {
+    margin: 3px 0;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* card links */
+.card a {
+    color: var(--blue);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+.card a:hover {
+    color: var(--blue-light);
+    text-decoration: underline;
+}
+
+/* ---- QUOTE CARDS ---- */
 .quote-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 16px;
     justify-content: flex-start;
 }
 
 .quote-card {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-    width: 290px;
-    transition: transform 0.2s;
+    background: var(--surface);
+    padding: 18px 16px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: 320px;
+    border: 1.5px solid var(--border);
+    transition: transform var(--transition), box-shadow var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-card::before {
+    content: '"';
+    position: absolute;
+    top: -8px; left: 10px;
+    font-size: 72px;
+    color: var(--blue-soft);
+    font-family: Georgia, serif;
+    line-height: 1;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .quote-card:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
 }
 
 .quote-card .chinese {
-    font-weight: 1500px;
-    font-size: 18px;
-    margin-bottom: 6px;
-    margin-top: 1px;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: var(--text);
+    position: relative;
+    z-index: 1;
 }
 
 .quote-card .english {
     font-style: italic;
-    color: #555;
-    font-size: 16px;
+    color: var(--text-muted);
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
 }
 
-/* ---------------- 音乐样式 ---------------- */
-.card a {
-    color: inherit;
-    /* 继承父元素颜色 */
-    text-decoration: none;
-    /* 去掉下划线 */
-}
-
-/* 可选：悬停效果，让用户知道这是可点击的 */
-.card a:hover {
-    text-decoration: underline; /* 悬停时显示下划线 */
-    color: #5986d8; /* 或你网站主题色 */
-}
-
-
-
-/* ---------------- 美食样式 ---------------- */
+/* ---- FOOD SECTION ---- */
 #food .card h3 {
-    margin: 6px 0; /* 减小上下间距 */
-    font-size: 20px;
+    font-size: 15px;
+    margin: 4px 0;
+    color: var(--text);
 }
 
-/* food 卡片里的段落 */
 #food .card p {
-    margin: 10px 0; /* 再收紧段落间距 */
-    line-height: 1.5; /* 保证可读性 */
-    font-size: 16px;
-}
-
-/* ---------------- 音乐样式 ---------------- */
-/* 音乐卡片整体 */
-#music .card {
-    padding-top: 10px; /* 让文字靠上 */
-}
-
-/* 音乐卡片标题 */
-#music .card h3 {
-    margin: 8px 0; /* 缩小标题间距 */
-    font-size: 20px;
-}
-
-/* 音乐卡片段落 */
-#music .card p {
-    margin: 3px 0; /* 缩小段落上下空隙 */
+    font-size: 13px;
+    margin: 4px 0;
     line-height: 1.5;
-    font-size: 16px;
 }
 
+/* ---- MUSIC SECTION ---- */
+#music .card h3 {
+    font-size: 15px;
+    margin: 6px 0;
+}
 
-/* ---------------- 照片墙样式 ---------------- */
+#music .card p {
+    font-size: 13px;
+    margin: 3px 0;
+    line-height: 1.5;
+}
+
+/* ---- PHOTO WALL ---- */
 .photo-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    justify-content: flex-start; /* 左对齐 */
-    align-items: flex-start; /* 每个卡片按内容高度对齐 */
+    gap: 16px;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .photo-card {
-    width: 238px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
+    width: 23%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: var(--surface);
     overflow: hidden;
+    border: 1.5px solid var(--border);
+    transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.photo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
 }
 
 .photo-card summary {
-    list-style: none; /* 去掉箭头默认样式 */
+    list-style: none;
     cursor: pointer;
 }
 
 .photo-card summary img {
     width: 100%;
     display: block;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border);
+    transition: opacity var(--transition);
+}
+
+.photo-card summary:hover img {
+    opacity: 0.92;
 }
 
 .photo-card summary p {
     text-align: center;
-    margin: 1px 0;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 6px 10px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 10px;
+    color: var(--text);
 }
+
+.photo-card summary::-webkit-details-marker { display: none; }
 
 .photo-detail {
-    padding: 2px 10px;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #333;
+    padding: 4px 12px 10px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    background: var(--blue-soft);
 }
 
-.photo-detail p {
-    margin: 4px 0;
+.photo-detail p { margin: 5px 0; }
+
+/* rotate the chevron when details is open */
+details[open] summary .fa-chevron-down {
+    transform: rotate(180deg);
+    transition: transform 0.2s;
 }
 
-.photo-card summary::-webkit-details-marker {
-        display: none; /* 专门去掉 Chrome/Safari 的小三角 */
-    }
+.photo-card summary .fa-chevron-down {
+    transition: transform 0.2s;
+}
 
-/* ---------------- 页脚样式 ---------------- */
+/* ---- FOOTER ---- */
 footer {
     text-align: center;
-    padding: 15px;
-    background-color: #333;
-    color: white;
-    margin-top: 20px;
+    padding: 18px;
+    background-color: #2a2a35;
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    margin-top: 32px;
+    letter-spacing: 0.02em;
 }
 
-/* ================== 手机端适配 ================== */
+/* ================== MOBILE ================== */
 @media only screen and (max-width: 600px) {
-    /* 页眉 */
-    header {
-        padding: 15px;
-        text-align: center;
-    }
+    header { padding: 20px 16px 18px; }
+    header h1 { font-size: 22px; }
+    header p  { font-size: 13px; }
 
-    header h1 {
-        font-size: 24px;
-    }
+    .lang-switch a { padding: 4px 10px; font-size: 0.72rem; }
+    .info-btn       { padding: 5px 10px; font-size: 0.75rem; }
 
-    header p {
-        font-size: 14px;
-    }
+    nav { display: flex; justify-content: space-around; flex-wrap: nowrap; }
+    nav a { font-size: 13px; padding: 10px 8px; }
 
-    /* 语言切换按钮 */
-    .lang-switch a {
-        padding: 4px 8px;
-        font-size: 0.75rem;
-        border-radius: 14px;
-    }
+    section { padding: 20px 14px; }
 
-    /* 关于本站按钮 */
-    .info-btn {
-        padding: 4px 8px;
-        font-size: 0.75rem;
-        border-radius: 14px;
-    }
+    #movie-types { display: flex; flex-wrap: wrap; justify-content: center; }
+    #movie-types .type-card { width: 28%; margin: 4px; padding: 14px 8px; }
 
-    /* 导航保持一排 */
-    nav {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: nowrap;
-        background-color: #3e3e3e;
-    }
-
-    nav a {
-        font-size: 16px;
-        padding: 10px;
-        text-align: center;
-    }
-
-    /* 影视类型选择：三列 */
-    #movie-types .type-card {
-        width: 21%;
-        margin: 1px;
-    }
-
-    #movie-types {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center; /* 三张卡片整体居中 */
-    }
-
-    /* 影视返回按钮 */
     .back-btn {
-        width: 92.5%;
+        width: 95%;
         height: 40px;
         font-size: 14px;
-        margin-bottom: 10px;
-        padding: 0;
         display: flex;
-        justify-content: center; /* 水平居中 */
-        align-items: center; /* 垂直居中 */
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        margin: 0 auto 10px auto;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        margin: 0 auto 14px auto;
     }
 
-    /* 影视卡片：两列 */
     #movie-content .card {
-        width: 45%;
+        width: 47%;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
         box-sizing: border-box;
-        padding: 14px;
+        padding: 12px;
     }
 
-    /* 图片 */
-    #movie-content .card img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 6px;
-        margin-bottom: 6px;
-    }
+    #movie-content .card img { height: 160px; }
+    #movie-content .card h3  { font-size: 13px; }
+    #movie-content .card p   { font-size: 12px; }
 
-    /* 标题 */
-    #movie-content .card h3 {
-        font-size: 15px;
-        margin: 4px 0;
-    }
+    .quote-card, .card { width: 47%; }
+    .quote-card .chinese { font-size: 14px; }
+    .quote-card .english { font-size: 12px; }
+    .quote-card::before  { font-size: 52px; }
 
-    /* 文本 */
-    #movie-content .card p {
-        font-size: 13px;
-        margin: 2px 0;
-        line-height: 1.4;
-    }
+    #food .card h3 { font-size: 14px; }
+    #food .card p  { font-size: 12px; }
 
-    /* 文案卡片、音乐卡片、照片墙：两列 */
-    .card-container:not(#movie-content):not(#movie-types){
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
+    #music-types { display: flex; flex-wrap: wrap; justify-content: center; }
+    #music-types .type-card { width: 28%; margin: 4px; padding: 14px 8px; }
 
-    .card-container {
-        justify-content: flex-start;
-    }
+    #music-content .card { width: 47%; box-sizing: border-box; padding: 12px; }
+    #music-content .card h3 { font-size: 13px; }
+    #music-content .card p  { font-size: 12px; }
 
-    .quote-container {
-        justify-content: flex-start;
-    }
+    .photo-container { margin-left: 0; gap: 12px; }
+    .photo-card      { width: 48%; }
+    .photo-detail    { font-size: 12px; }
+    .photo-card summary p { font-size: 13px; }
 
-    .photo-container {
-        justify-content: flex-start;
-        margin-left: 25px;
-        gap: 20px;
-    }
-
-    .photo-card {
-        width: 45%;
-    }
-
-    .quote-card,
-    .card {
-        width: 40%; /* 两张一排 */
-    }
-
-    .quote-card .chinese {
-        font-size: 15px;
-        margin-bottom: 6px;
-        margin-top: 1px;
-    }
-
-    .quote-card .english {
-        font-size: 13px;
-    }
-
-    #food .card h3 {
-        margin: 6px 0; /* 减小上下间距 */
-        font-size: 16px;
-    }
-
-    /* food 卡片里的段落 */
-    #food .card p {
-        margin: 10px 0; /* 再收紧段落间距 */
-        line-height: 1.5; /* 保证可读性 */
-        font-size: 13px;
-    }
-
-    .photo-detail {
-        font-size: 13px;
-    }
-
-    /* 音乐类型选择 */
-    #music-types .type-card {
-        width: 21%;
-        margin: 1px;
-    }
-
-    
-    #music-types .type-card h3 {
-        text-align: center;
-        width: 100%; /* 保证能居中整个标题 */
-    }
-
-    /* 音乐卡片：两列 */
-    #music-content .card {
-        width: 45%;
-        display: flex; /* 弹性布局 */
-        flex-direction: column; /* 垂直排列 */
-        align-items: flex-start; /* 文本左对齐 */
-        box-sizing: border-box;
-        padding: 14px;
-    }
-
-    /* 音乐卡片标题 */
-    #music-content .card h3 {
-        font-size: 15px;
-        margin: 4px 0;
-    }
-
-    /* 文本 */
-    #music-content .card p {
-        font-size: 13px;
-        margin: 2px 0;
-        line-height: 1.4;
-    }
-
-    .photo-card summary::-webkit-details-marker {
-        display: none; /* 专门去掉 Chrome/Safari 的小三角 */
-    }
-
-    .photo-card summary p {
-        font-size: 16px;
-    }
-
-    /* 页脚 */
-    footer {
-        font-size: 12px;
-        padding: 10px;
-    }
+    footer { font-size: 11px; padding: 12px; }
 }
 
-/* ================== ipad端适配portrait/vertical ================== */
+/* ================== TABLET ================== */
 @media only screen and (min-width: 601px) and (max-width: 1400px) {
+    header h1 { font-size: 26px; }
+    header p  { font-size: 15px; }
 
-    /* 样式 */
-    /* body {
-        zoom: 0.85;
-    } */
+    nav a { font-size: 16px; padding: 12px 18px; }
 
-    header h1 {
-        font-size: 25px;
-        margin-bottom: 10px;
-    }
+    .card-container { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 14px; }
+    .photo-container { justify-content: flex-start; }
+    .back-btn { width: 200px; height: 44px; font-size: 15px; }
 
-    header p {
-        font-size: 16px;
-        line-height: 1.6;
-        color: #f0f0f0; /* 白色或浅色，和背景对比 */
-        margin: 0;
-    }
-
-    /* 导航栏样式 */
-    nav {
-        background-color: #3e3e3e;
-    }
-
-    /* 导航链接样式 */
-    nav a {
-        color: white;
-        font-size: 18px;
-        text-decoration: none;
-        padding: 12px 20px;
-        display: inline-block;
-        transition: background-color 0.3s;
-    }
-
-    .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 15px;
-}
-
-    /* 影视 */
-    #movies .card-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: flex-start /* 左对齐 */;
-    }
-
-    /* 影视返回按钮样式 */
-    .back-btn {
-        width: 230px;
-        height: 50px;
-        cursor: pointer;
-        background-color: #5986d8;
-        border: none;
-        color: white;
-        border-radius: 5px;
-        font-size: 16px;
-        transition: background-color 0.3s;
-        margin-bottom: 20px;
-
-        /* 关键：让文字居中 */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* 美食卡片容器 */
-    #food .card-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: flex-start;
-    }
-
-    /* 音乐 */
-    #music .card-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: flex-start;
-    }
-
-    .photo-container {
-        justify-content: flex-start;
-        }
-
-    .photo-card summary::-webkit-details-marker {
-        display: none; /* 专门去掉 Chrome/Safari 的小三角 */
-    }
+    .photo-card summary::-webkit-details-marker { display: none; }
 }

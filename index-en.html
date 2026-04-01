@@ -22,8 +22,7 @@
     <header>
         <h1>jiliguLU-ing</h1>
         <p>Welcome to my digital garden<br>
-            Not a rigid archive, but a place where ideas take root and memories bloom—a collection of fleeting sparks
-            and everyday fragments.</p>
+            Not a rigid archive, but a place where ideas take root and memories bloom—a collection of everyday fragments.</p>
         <!-- Info button -->
         <button id="openReadme" class="info-btn">
             <i class="fa-solid fa-circle-info"></i> About
@@ -178,7 +177,63 @@
     <!-- Quotes Section -->
     <section id="quotes">
         <h2>Quotes</h2>
-        <div class="quote-container">
+
+        <!-- Random Quotes -->
+        <div id="random-quote-box" style="
+            background: #fff;
+            border: 1.5px solid #e4e0d8;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 12px rgba(74,123,212,0.10);
+            /* max-width: 480px; */
+            max-width: 100%;
+            position: relative;
+            overflow: hidden;
+        ">
+            <div style="
+                position:absolute; top:-8px; left:10px;
+                font-size:72px; color:#e8eef9;
+                font-family:Georgia,serif; line-height:1;
+                pointer-events:none;
+            ">"</div>
+            <p id="rq-chinese" style="font-size:18px;font-weight:600;margin:0 0 10px;color:#2a2a35;position:relative;"></p>
+            <p id="rq-english" style="font-style:italic;color:#6b6b7e;font-size:15px;margin:0;position:relative;"></p>
+            <button onclick="showRandomQuote()" style="
+                margin-top: 16px;
+                padding: 7px 18px;
+                background: #4a7bd4;
+                color: #fff;
+                border: none;
+                border-radius: 20px;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background 0.2s;
+                position: relative;
+            " onmouseover="this.style.background='#6b95db'"
+               onmouseout="this.style.background='#4a7bd4'">
+                🔀 Shuffle
+            </button>
+        </div>
+
+        <button onclick="toggleQuotes(this)" style="
+            padding: 7px 18px;
+            background: #fff;
+            color: #4a7bd4;
+            border: 1.5px solid #4a7bd4;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 16px;
+            transition: all 0.2s;
+        " onmouseover="this.style.background='#e8eef9'"
+        onmouseout="this.style.background='#fff'">
+            See all <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="quote-container" id="all-quotes" style="display:none;">
             <div class="quote-card">
                 <p class="chinese">不要因为别人交卷了，就乱写答案。</p>
                 <p class="english">Move at your own pace, on your own path. Your lane, your race, your pace.</p>
@@ -221,9 +276,73 @@
             </div>
     </section>
 
+    <script>
+        function toggleQuotes(btn) {
+            const box = document.getElementById('all-quotes');
+            const isHidden = box.style.display === 'none';
+            box.style.display = isHidden ? 'flex' : 'none';
+            btn.innerHTML = isHidden 
+                ? 'Hide <i class="fa-solid fa-chevron-up"></i>' 
+                : 'See all <i class="fa-solid fa-chevron-down"></i>';
+        }
+    </script>
+
+    <script>
+        const allQuotes = [
+            { zh: '不要因为别人交卷了，就乱写答案。', en: 'Move at your own pace, on your own path. Your lane, your race, your pace.' },
+            { zh: '分享，是把多余的给出去，而不是把必需的交出去。', en: 'Sharing is giving what you have extra, not what you need.' },
+            { zh: '车到山头必有路，船到桥头自然直。', en: "Where there's a will, there's a way." },
+            { zh: '懂事的孩子没糖吃，懂事只换来被忽视。', en: 'The ones who understand ask for less—and receive even less.' },
+            { zh: '好事总发生在下一个转弯。', en: 'The best surprises always happen at the next turn.' },
+            { zh: '顺其自然，不必刻意迎合，只求顺从内心。', en: 'Flow with life, not approval.' },
+            { zh: '心要像门一样，开合有度 进退自如。', en: 'Hold your heart like a door—open, close, and move with ease, as life calls for it.' },
+            { zh: '人生注定不圆满，遗憾才是常态。', en: "Life is destined to be imperfect; regrets are its constant companion." },
+            { zh: '成年人的世界，只筛选，不教育；只选择，不改变。', en: "As adults, we don't change people—we choose who to keep around." },
+            { zh: '没有正确的选择，要让选择变正确。', en: "There's no perfect choice—you make your choice right." }
+        ];
+ 
+        let lastIndex = -1;
+        function showRandomQuote() {
+            let idx;
+            do { idx = Math.floor(Math.random() * allQuotes.length); } while (idx === lastIndex);
+            lastIndex = idx;
+            const q = allQuotes[idx];
+            const zh = document.getElementById('rq-chinese');
+            const en = document.getElementById('rq-english');
+            zh.style.opacity = 0; en.style.opacity = 0;
+            setTimeout(() => {
+                zh.textContent = q.zh;
+                en.textContent = q.en;
+                zh.style.transition = en.style.transition = 'opacity 0.3s';
+                zh.style.opacity = 1; en.style.opacity = 1;
+            }, 150);
+        }
+        showRandomQuote(); // show one on load
+    </script>
+
     <!-- Food Section -->
     <section id="food">
         <h2>Food</h2>
+
+        <a href="https://beliapp.co/app/britneyluuu" target="_blank" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 16px;
+            background: #fff;
+            color: #4a7bd4;
+            border: 1.5px solid #4a7bd4;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 16px;
+            transition: background 0.2s;
+        " onmouseover="this.style.background='#e8eef9'"
+        onmouseout="this.style.background='#fff'">
+            🍴 View my Beli
+        </a>
+        
         <div class="card-container">
             <div class="card">
                 <h3><a href="https://maps.app.goo.gl/rnVCYeFLPnk68pjcA" target="_blank">Chu Shang Spicy <i
@@ -486,7 +605,7 @@
 
     <!-- 页脚 -->
     <footer>
-        &copy; 2026 blu's personal web
+        &copy; <script>document.write(new Date().getFullYear())</script> blu's personal web
     </footer>
 
 </body>
