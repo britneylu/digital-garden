@@ -53,7 +53,6 @@
             <p>This is a website built with <b>HTML + CSS + JS</b>:</p>
             <ul>
                 <li><b>No frameworks</b>, built from scratch (okay, AI gave me a little nudge)</li>
-                <li><b>Simple and clean</b>, loads super fast</li>
                 <li><b>Updated whenever</b>—I write as inspiration comes</li>
             </ul>
 
@@ -148,7 +147,7 @@
             contentDiv.innerHTML = '';
 
             const backBtn = document.createElement('button');
-            backBtn.textContent = '← Back to categories';
+            backBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i> Back to categories';
             backBtn.className = 'back-btn';
             backBtn.onclick = () => {
                 contentDiv.style.display = 'none';
@@ -515,7 +514,7 @@
             contentDiv.innerHTML = '';
 
             const backBtn = document.createElement('button');
-            backBtn.textContent = '← Back to categories';
+            backBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i> Back to categories';
             backBtn.className = 'back-btn';
             backBtn.onclick = () => {
                 contentDiv.style.display = 'none';
@@ -547,7 +546,7 @@
             <details class="photo-card">
                 <summary>
                     <img src="static/images/photo_wall/hs_grad.png" alt="High school graduation">
-                    <p>HS Graduation <i class="fa-solid fa-expand"></i></p>
+                    <p>HS Graduation <i class="fa-solid fa-chevron-down"></i></p>
                 </summary>
                 <div class="photo-detail">
                     <p>Not the most ideal angle for a pic, but turned out alright. Honestly, all I was thinking in the
@@ -559,7 +558,7 @@
             <details class="photo-card">
                 <summary>
                     <img src="static/images/photo_wall/santa_monica.jpg" alt="Santa Monica beach">
-                    <p>Santa Monica, CA <i class="fa-solid fa-expand"></i></p>
+                    <p>Santa Monica, CA <i class="fa-solid fa-chevron-down"></i></p>
                 </summary>
                 <div class="photo-detail">
                     <p>The ocean in Cali is so healing. A seagull photobombed right as I captured.</p>
@@ -570,10 +569,10 @@
             <details class="photo-card">
                 <summary>
                     <img src="static/images/photo_wall/vanderbilt.jpg" alt="Long Island">
-                    <p>Vanderbilt Beach <i class="fa-solid fa-expand"></i></p>
+                    <p>Vanderbilt Museum <i class="fa-solid fa-chevron-down"></i></p>
                 </summary>
                 <div class="photo-detail">
-                    <p>This was in Long Island, NY. The sea breeze was so nice.</p>
+                    <p>This was our 1-day NY trip. It was a damn HOTTT day.</p>
                     <p>Date: 08-10-2024</p>
                 </div>
             </details>
@@ -581,7 +580,7 @@
             <details class="photo-card">
                 <summary>
                     <img src="static/images/photo_wall/blackpink.png" alt="Blackpink concert">
-                    <p>Blackpink Concert <i class="fa-solid fa-expand"></i></p>
+                    <p>Blackpink Concert <i class="fa-solid fa-chevron-down"></i></p>
                 </summary>
                 <div class="photo-detail">
                     <p>The opening stage—I was so hyped. If you look closer at audience, it's kinda funny how everyone's
@@ -593,11 +592,23 @@
             <details class="photo-card">
                 <summary>
                     <img src="static/images/photo_wall/quebec.png" alt="The Globin Red Door">
-                    <p>Québec City, CA <i class="fa-solid fa-expand"></i></p>
+                    <p>Québec City, CA <i class="fa-solid fa-chevron-down"></i></p>
                 </summary>
                 <div class="photo-detail">
                     <p>The red door that appeared in the k-drama "The Globin."</p>
                     <p>Date: 11-26-2025</p>
+                </div>
+            </details>
+
+            <details class="photo-card">
+                <summary>
+                    <img src="static/images/photo_wall/soho.png" alt="New York SoHo">
+                    <p>SoHo <i class="fa-solid fa-chevron-down"></i></p>
+                </summary>
+                <div class="photo-detail">
+                    <p>Leather jacket + sunglasses = SoHo approved
+                        <br>City girl mode: ON </p>
+                    <p>Date: 03-08-2026</p>
                 </div>
             </details>
         </div>

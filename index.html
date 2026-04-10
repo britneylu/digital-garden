@@ -54,7 +54,6 @@
             <p>这是一个轻量级的网页项目，用 <b>HTML + CSS + JS</b> 完成：</p>
             <ul>
                 <li><b>零框架</b>，纯手工搭建（好吧GPT老师确实帮了一点忙）</li>
-                <li><b>简洁清爽</b>，加载飞快</li>
                 <li><b>随缘更新</b>，想到什么写什么</li>
             </ul>
 
@@ -159,7 +158,7 @@
 
             // 返回按钮单独一行
             const backBtn = document.createElement('button');
-            backBtn.textContent = '← 返回类型选择';
+            backBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i> 返回类型选择';
             backBtn.className = 'back-btn';
             backBtn.onclick = () => {
                 contentDiv.style.display = 'none';
@@ -385,7 +384,7 @@
                 <p>备注: 比较符合我的口味，茶味会重一点。</p>
             </div>
             <div class="card">
-                <h3><a href="https://maps.app.goo.gl/ZvWGXsqVFAEJBH7s9" target="_blank">Molly Tea <i
+                <h3><a href="https://maps.app.goo.gl/ZvWGXsqVFAEJBH7s9" target="_blank">茉莉奶白 <i
                             class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
                 <p>类型: 饮品/甜品</p>
                 <p>评分: ★★★★☆</p>
@@ -536,7 +535,7 @@
 
             // 返回按钮
             const backBtn = document.createElement('button');
-            backBtn.textContent = '← 返回类型选择';
+            backBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i> 返回类型选择';
             backBtn.className = 'back-btn';
             backBtn.onclick = () => {
                 contentDiv.style.display = 'none';
@@ -592,10 +591,10 @@
             <details class="photo-card">
                 <summary>
                     <img src="static/images/photo_wall/vanderbilt.jpg" alt="长岛">
-                    <p>Vanderbilt Beach <i class="fa-solid fa-chevron-down"></i></p>
+                    <p>Vanderbilt 博物馆 <i class="fa-solid fa-chevron-down"></i></p>
                 </summary>
                 <div class="photo-detail">
-                    <p>这张照片是在纽约长岛的时候拍的，海风很舒服。</p>
+                    <p>暴走暴热的纽约一日游！</p>
                     <p>拍摄日期: 08-10-2024</p>
                 </div>
             </details>
@@ -603,7 +602,7 @@
             <details class="photo-card">
                 <summary>
                     <img src="static/images/photo_wall/blackpink.png" alt="粉墨演唱会">
-                    <p>Blackpink演唱会 <i class="fa-solid fa-chevron-down"></i></p>
+                    <p>Blackpink 演唱会 <i class="fa-solid fa-chevron-down"></i></p>
                 </summary>
                 <div class="photo-detail">
                     <p>演唱会的开场，太激动了。密密麻麻的观众还有点搞笑是怎么回事，每个人都高高的举起手机</p>
@@ -614,11 +613,23 @@
             <details class="photo-card">
                 <summary>
                     <img src="static/images/photo_wall/quebec.png" alt="魁北克鬼怪红门">
-                    <p>Québec City, CA <i class="fa-solid fa-chevron-down"></i></p>
+                    <p>魁北克 <i class="fa-solid fa-chevron-down"></i></p>
                 </summary>
                 <div class="photo-detail">
                     <p>打卡鬼怪里的红门。</p>
                     <p>拍摄日期: 11-26-2025</p>
+                </div>
+            </details>
+
+            <details class="photo-card">
+                <summary>
+                    <img src="static/images/photo_wall/soho.png" alt="纽约SoHo">
+                    <p>SoHo <i class="fa-solid fa-chevron-down"></i></p>
+                </summary>
+                <div class="photo-detail">
+                    <p>纽约街头出片两件套：皮衣墨镜
+                        <br>city girl 上线</p>
+                    <p>拍摄日期: 03-08-2026</p>
                 </div>
             </details>
         </div>
